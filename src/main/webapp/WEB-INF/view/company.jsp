@@ -15,12 +15,14 @@
 <table border="2px">
     <thead>
     <tr>
+        <th>id:</th>
         <th>companyName:</th>
         <th>Country:</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${company}" var="com">
+        <td>${com.id}</td>
         <td>${com.companyName}</td>
         <td>${com.country}</td>
     </c:forEach>

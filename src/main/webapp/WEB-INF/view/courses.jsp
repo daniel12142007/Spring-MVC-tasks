@@ -15,6 +15,7 @@
 <table border="2px">
     <thead>
     <tr>
+        <th>id:</th>
         <th>courName:</th>
         <th>Year:</th>
         <th>company id:</th>
@@ -22,6 +23,7 @@
     </thead>
     <tbody>
     <c:forEach items="${courses}" var="com">
+        <td>${com.id}</td>
         <td>${com.courName}</td>
         <td>${com.year}</td>
         <td>${com.company.id}</td>

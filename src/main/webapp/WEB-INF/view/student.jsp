@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ACER
@@ -11,6 +12,27 @@
     <title>Title</title>
 </head>
 <body>
-
+<table border="2px">
+    <thead>
+    <tr>
+        <th>id:</th>
+        <th>first_name:</th>
+        <th>last_name:</th>
+        <th>email:</th>
+        <th>studentFormat:</th>
+        <th>group id:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${student}" var="com">
+        <td>${com.id}</td>
+        <td>${com.first_name}</td>
+        <td>${com.last_name}</td>
+        <td>${com.email}</td>
+        <td>${com.studentFormat}</td>
+        <td>${com.group.id}</td>
+    </c:forEach>
+    </tbody>
+</table>
 </body>
 </html>
