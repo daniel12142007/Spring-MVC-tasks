@@ -11,32 +11,48 @@
     <title>Title</title>
 </head>
 <body>
-<button>
-    <a href="/find/company">
-        Company</a>
-</button>
-<br>
-<button>
-    <a href="/find/courses">Course</a>
-</button>
-<br>
-<button>
-    <a href="/find/group">Group</a>
-</button>
-<br>
-<button>
-    <a href="/find/teacher">Teacher</a>
-</button>
-<br>
-<button>
-    <a href="/find/student">Student</a>
-</button>
+<div style="margin-top: 200px; margin-left: 600px;">
+    <button>
+        <a href="/find/company">
+            Company</a>
+    </button>
+    <br>
+    <button>
+        <a href="/find/courses">Course</a>
+    </button>
+    <br>
+    <button>
+        <a href="/find/group">Group</a>
+    </button>
+    <br>
+    <button>
+        <a href="/find/teacher">Teacher</a>
+    </button>
+    <br>
+    <button>
+        <a href="/find/student">Student</a>
+    </button>
+    <br>
+    <button>
+        <a href="/form/company">register table company</a>
+    </button>
+</div>
 <br>
 <style>
     button {
-        background-color: black;
+        margin: 10px;
+        background-color: red;
+        border-radius: 20px;
+        border: none;
     }
-    a{
+
+    button:hover {
+        background-color: crimson;
+
+
+    }
+
+    a {
         color: white;
     }
 </style>

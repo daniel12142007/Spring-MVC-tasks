@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "company")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,11 +20,10 @@ public class Company {
     private String companyName;
     @Column(name = "country")
     private String country;
+    @OneToMany(mappedBy = "company_id", cascade = CascadeType.ALL)
+    private List<Group> groups;
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Course> courses;
-
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Group> groups;
 
 
     public Company(String companyName, String country) {

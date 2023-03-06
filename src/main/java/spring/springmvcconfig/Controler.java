@@ -3,6 +3,8 @@ package spring.springmvcconfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import spring.model.*;
 
 import java.util.ArrayList;
@@ -50,9 +52,68 @@ public class Controler {
         course.setGroups(groups);
     }
 
+    @PostMapping("/save")
+    private String saveCompany(@RequestParam("name") String name, @RequestParam("country") String country) {
+        Company company = new Company();
+        company.setId(companies.size() + 1l);
+        company.setCompanyName(name);
+        company.setCountry(country);
+        companies.add(company);
+        return "redirect:/";
+    }
+
+    @GetMapping("/form/company")
+    public String formcompany() {
+        return "formcompany";
+    }
+
+    @PostMapping("/save/course")
+    private String saveCourse(@RequestParam("name") String name, @RequestParam("age") int age) {
+        Course course = new Course();
+        course.setId(companies.size() + 1l);
+        course.setCourName(name);
+        course.setYear(age);
+        return "redirect:/";
+    }
+
+    @GetMapping("/form/course")
+    public String formcourses() {
+        return "/formcourse";
+    }
+
+    @PostMapping("/save/group")
+    private String saveGroup(@RequestParam("name") String name, @RequestParam("start") int start, @RequestParam("finish") int finish) {
+        Group group = new Group();
+        group.setId(groups.size() + 1l);
+        group.setGroupName(name);
+        group.setStart(start);
+        group.setFinish(finish);
+        return "redirect:/";
+    }
+
+    @GetMapping("/form/group")
+    public String formgroup() {
+        return "formgroup";
+    }
+
     @GetMapping("/")
     public String menu() {
         return "menu";
+    }
+
+    @PostMapping("/save/teacher")
+    private String saveTeacher(@RequestParam("first_name") String first_name, @RequestParam("last_name") String lust_name, @RequestParam String email) {
+        Teacher teacher = new Teacher();
+        teacher.setId(teachers.size() + 1l);
+        teacher.setFirst_name(first_name);
+        teacher.setLast_name(lust_name);
+        teacher.setEmail(email);
+        return "redirect:/";
+    }
+
+    @GetMapping("form/teacher")
+    public String formteacher() {
+        return "formteacher";
     }
 
     @GetMapping("/find/company")

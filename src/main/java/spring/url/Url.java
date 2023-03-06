@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import spring.model.Course;
 import spring.model.Company;
+import spring.model.Group;
 import spring.model.Teacher;
 
 public class Url {
@@ -22,6 +23,7 @@ public class Url {
                 .addAnnotatedClass(Company.class)
                 .addAnnotatedClass(Course.class)
                 .addAnnotatedClass(Teacher.class)
+                .addAnnotatedClass(Group.class)
                 .buildSessionFactory();
     }
 

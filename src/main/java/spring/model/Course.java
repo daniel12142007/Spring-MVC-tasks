@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "course")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -22,7 +23,7 @@ public class Course {
     @ManyToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Group> groups;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "comapany_id")
+    @JoinColumn(name = "company_id")
     private Company company;
     @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
     private Teacher teacher;

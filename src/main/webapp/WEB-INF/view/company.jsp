@@ -20,13 +20,13 @@
         <th>Country:</th>
     </tr>
     </thead>
-    <tbody>
     <c:forEach items="${company}" var="com">
+        <tbody>
         <td>${com.id}</td>
         <td>${com.companyName}</td>
         <td>${com.country}</td>
+        </tbody>
     </c:forEach>
-    </tbody>
 </table>
 </body>
 </html>

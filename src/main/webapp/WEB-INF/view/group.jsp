@@ -22,8 +22,8 @@
         <th>course id:</th>
     </tr>
     </thead>
-    <tbody>
     <c:forEach items="${group}" var="com">
+        <tbody>
         <td>${com.id}</td>
         <td>${com.start}</td>
         <td>${com.finish}</td>
@@ -31,8 +31,8 @@
         <c:forEach items="${com.course}" var="s">
             <td>${s.id}</td>
         </c:forEach>
+        </tbody>
     </c:forEach>
-    </tbody>
 </table>
 </body>
 </html>

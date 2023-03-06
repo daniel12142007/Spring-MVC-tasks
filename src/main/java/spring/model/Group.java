@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "group")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -42,6 +43,7 @@ public class Group {
                "id->" + id +
                ", groupName->'" + groupName + '\'' +
                ", start->" + start +
+               ", finish->" + finish +
                '}';
     }
 }

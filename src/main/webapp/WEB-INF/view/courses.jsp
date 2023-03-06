@@ -21,14 +21,14 @@
         <th>company id:</th>
     </tr>
     </thead>
-    <tbody>
     <c:forEach items="${courses}" var="com">
+        <tbody>
         <td>${com.id}</td>
         <td>${com.courName}</td>
         <td>${com.year}</td>
         <td>${com.company.id}</td>
+        </tbody>
     </c:forEach>
-    </tbody>
 </table>
 </body>
 </html>

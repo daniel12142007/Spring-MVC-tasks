@@ -23,16 +23,16 @@
         <th>group id:</th>
     </tr>
     </thead>
-    <tbody>
     <c:forEach items="${student}" var="com">
+        <tbody>
         <td>${com.id}</td>
         <td>${com.first_name}</td>
         <td>${com.last_name}</td>
         <td>${com.email}</td>
         <td>${com.studentFormat}</td>
         <td>${com.group.id}</td>
+        </tbody>
     </c:forEach>
-    </tbody>
 </table>
 </body>
 </html>
