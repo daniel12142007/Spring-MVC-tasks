@@ -1,10 +1,10 @@
 package spring.model.repository.interfaces;
 
-public interface Repository<P, C, S> {
+public interface Repository<P, C, S, G, S1> {
 
-    void savePresident(P t);
+    void saveCompany(P t);
 
     void saveCourse(C c);
 
-    void saveStudent(S s);
+    void saveTeacher(S s);
 }

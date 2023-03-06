@@ -2,18 +2,16 @@ package spring.model.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import spring.model.Course;
-import spring.model.President;
-import spring.model.Student;
+import spring.model.*;
 import spring.model.repository.interfaces.Repository;
 import spring.url.Url;
 
 import java.util.List;
 
-public class AllRepository implements Repository<President, Course, Student> {
+public class AllRepository implements Repository<Company, Course, Teacher, Group, Student> {
     private final SessionFactory sessionFactory = Url.getS();
 
-    public void savePresident(President t) {
+    public void saveCompany(Company t) {
         try (Session session = sessionFactory.openSession()) {
             session.save(t);
             System.out.println("save->" + t);
@@ -27,6 +25,20 @@ public class AllRepository implements Repository<President, Course, Student> {
         }
     }
 
+    public void saveTeacher(Teacher teacher) {
+        try (Session session = sessionFactory.openSession()) {
+            session.save(teacher);
+            System.out.println("save->" + teacher);
+        }
+    }
+
+    public void saveGroup(Group group) {
+        try (Session session = sessionFactory.openSession()) {
+            session.save(group);
+            System.out.println("save->" + group);
+        }
+    }
+
     public void saveStudent(Student student) {
         try (Session session = sessionFactory.openSession()) {
             session.save(student);
@@ -34,9 +46,9 @@ public class AllRepository implements Repository<President, Course, Student> {
         }
     }
 
-    public List findallPresident() {
+    public List findallComapny() {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("select p from President p").getResultList();
+            return session.createQuery("select p from Company p").getResultList();
         }
     }
 
@@ -46,9 +58,22 @@ public class AllRepository implements Repository<President, Course, Student> {
         }
     }
 
-    public List findallStudent() {
+    public List findallTeacher() {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("select s from Student s").getResultList();
+            return session.createQuery("select s from Teacher s").getResultList();
         }
     }
+
+    public List findallGroup() {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("select a from Group a ").getResultList();
+        }
+    }
+
+    public List findallStudent() {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("select h from Student h").getResultList();
+        }
+    }
+
 }
