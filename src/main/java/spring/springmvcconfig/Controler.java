@@ -21,12 +21,17 @@ public class Controler {
         courses = new ArrayList<>();
         presidents = new ArrayList<>();
         President president = new President("Azamat", 37);
+        president.setId(presidents.size() + 1l);
+        presidents.add(president);
         Course course = new Course("it.kg", 1);
         course.setPresident(president);
+        course.setId(courses.size() + 1l);
         courses.add(course);
         president.setCourses(courses);
         Student student = new Student("A1", 1);
         Student student1 = new Student("A2", 1);
+        student.setId(students.size() + 1l);
+        student1.setId(students.size() + 1l);
         student.setCourse(course);
         student1.setCourse(course);
         students.add(student);
