@@ -12,9 +12,27 @@ import java.util.List;
 
 @Controller
 public class Controler {
-    private List<Student> students = new ArrayList<>();
-    private List<Course> courses = new ArrayList<>();
-    private List<President> presidents = new ArrayList<>();
+    private static List<Student> students = new ArrayList<>();
+    private static List<Course> courses = new ArrayList<>();
+    private static List<President> presidents = new ArrayList<>();
+
+    static {
+        students = new ArrayList<>();
+        courses = new ArrayList<>();
+        presidents = new ArrayList<>();
+        President president = new President("Azamat", 37);
+        Course course = new Course("it.kg", 1);
+        course.setPresident(president);
+        courses.add(course);
+        president.setCourses(courses);
+        Student student = new Student("A1", 1);
+        Student student1 = new Student("A2", 1);
+        student.setCourse(course);
+        student1.setCourse(course);
+        students.add(student);
+        students.add(student1);
+        course.setStudents(students);
+    }
 
     @GetMapping("/table/student")
     public String tablesStudent(Model model) {
