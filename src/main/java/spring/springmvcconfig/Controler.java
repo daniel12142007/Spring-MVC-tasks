@@ -27,6 +27,12 @@ public class Controler {
         model.addAttribute("course", courses);
         return "course";
     }
+
+    @GetMapping("/table/president")
+    public String tablePresident(Model model) {
+        model.addAttribute("president", presidents);
+        return "president";
+    }
 }
 // List<Course> courses = new ArrayList<>();
 //        List<Student> students = new ArrayList<>();
