@@ -21,9 +21,9 @@ public class Teacher {
     private String last_name;
     @Column(name = "email")
     private String email;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
-    private Course course;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "course_id")
+//    private Course course;
 
     public Teacher(String first_name, String last_name, String email) {
         this.first_name = first_name;

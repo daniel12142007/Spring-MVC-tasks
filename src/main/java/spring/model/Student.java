@@ -24,9 +24,9 @@ public class Student {
     @Column(name = "studyFormat")
     private StudentFormat studentFormat;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id")
-    private Group group;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "group_id")
+//    private Group group;
 
     public Student(String first_name, String last_name, String email, StudentFormat studentFormat) {
         this.first_name = first_name;

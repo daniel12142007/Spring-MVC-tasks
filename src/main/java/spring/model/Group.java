@@ -25,11 +25,11 @@ public class Group {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
     private Company company;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
-    private List<Course> course;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Student> student;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "course")
+//    private List<Course> course;
+//    @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
+//    private List<Student> student;
 
     public Group(String groupName, int start, int finish) {
         this.groupName = groupName;

@@ -3,6 +3,8 @@ package spring.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,13 +22,14 @@ public class Course {
     private String courName;
     @Column(name = "year")
     private int year;
-    @ManyToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    private List<Group> groups;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "groups_id")
+//    private List<Group> groups;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
-    private Teacher teacher;
+//    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
+//    private Teacher teacher;
 
 
     public Course(String courName, int year) {

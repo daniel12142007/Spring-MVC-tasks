@@ -9,8 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "company")
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 public class Company {
     @Id
@@ -20,11 +20,10 @@ public class Company {
     private String companyName;
     @Column(name = "country")
     private String country;
-    @OneToMany(mappedBy = "company_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Group> groups;
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Course> courses;
-
 
     public Company(String companyName, String country) {
         this.companyName = companyName;

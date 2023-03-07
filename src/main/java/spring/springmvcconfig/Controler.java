@@ -20,36 +20,36 @@ public class Controler {
     private static List<Student> students = new ArrayList<>();
 
     static {
-        companies = new ArrayList<>();
-        courses = new ArrayList<>();
-        groups = new ArrayList<>();
-        teachers = new ArrayList<>();
-        students = new ArrayList<>();
-        Company company = new Company("Java", "USA");
-        company.setId(companies.size() + 1l);
-        companies.add(company);
-        Course course = new Course("it.kg", 9);
-        course.setId(courses.size() + 1l);
-        course.setCompany(company);
-        courses.add(course);
-        company.setCourses(courses);
-        Group group = new Group("java A", 2022, 2023);
-        group.setId(groups.size() + 1l);
-        group.setCompany(company);
-        groups.add(group);
-        company.setGroups(groups);
-        Teacher teacher = new Teacher("Daniel", "Ahatzanov", "daniel@gmail,com");
-        teacher.setId(teachers.size() + 1l);
-        teacher.setCourse(course);
-        course.setTeacher(teacher);
-        teachers.add(teacher);
-        Student student = new Student("Beknur", "Arapow", "beknur@gmail.com", StudentFormat.OFFLINE);
-        student.setId(students.size() + 1l);
-        student.setGroup(group);
-        students.add(student);
-        group.setStudent(students);
-        group.setCourse(courses);
-        course.setGroups(groups);
+//        companies = new ArrayList<>();
+//        courses = new ArrayList<>();
+//        groups = new ArrayList<>();
+//        teachers = new ArrayList<>();
+//        students = new ArrayList<>();
+//        Company company = new Company("Java", "USA");
+//        company.setId(companies.size() + 1l);
+//        companies.add(company);
+//        Course course = new Course("it.kg", 9);
+//        course.setId(courses.size() + 1l);
+//        course.setCompany(company);
+//        courses.add(course);
+//        company.setCourses(courses);
+//        Group group = new Group("java A", 2022, 2023);
+//        group.setId(groups.size() + 1l);
+//        group.setCompany(company);
+//        groups.add(group);
+//        company.setGroups(groups);
+//        Teacher teacher = new Teacher("Daniel", "Ahatzanov", "daniel@gmail,com");
+//        teacher.setId(teachers.size() + 1l);
+////        teacher.setCourse(course);
+////        course.setTeacher(teacher);
+//        teachers.add(teacher);
+//        Student student = new Student("Beknur", "Arapow", "beknur@gmail.com", StudentFormat.OFFLINE);
+//        student.setId(students.size() + 1l);
+////        student.setGroup(group);
+//        students.add(student);
+////        group.setStudent(students);
+////        group.setCourse(courses);
+////        course.setGroups(groups);
     }
 
     @PostMapping("/save")
