@@ -32,7 +32,7 @@ public interface Repositorys<Company, Course, Group, Teacher, Student> {
 
     void clearCourse();
 
-    // TODO: Group
+    // TODO: Groups
 
     List<Group> findAllGroup();
 

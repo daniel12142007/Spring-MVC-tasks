@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class AllRepositorys implements Repositorys<Company, Course, Group, Teacher, Student> {
+public class AllRepositorys implements Repositorys<Company, Course, Groups, Teacher, Student> {
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -46,7 +46,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         Company company1 = findByIdCompany(id);
         company1.setCompanyName(company.getCompanyName());
-        company1.setCountry(company.getCountry());
+        company1.setLocatedCountry(company.getLocatedCountry());
         session.merge(company1);
     }
 
@@ -86,7 +86,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         Course course1 = findByIdCourse(id);
         course1.setCourName(course.getCourName());
-        course1.setYear(course.getYear());
+        course1.setDuration(course.getDuration());
         session.merge(course1);
     }
 
@@ -137,45 +137,45 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         session.createQuery("delete from Teacher ").executeUpdate();
     }
 
-    // TODO: Group
+    // TODO: Groups
     @Override
-    public List<Group> findAllGroup() {
+    public List<Groups> findAllGroup() {
         Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select g from Group g", Group.class).getResultList();
+        return session.createQuery("select g from Groups g", Groups.class).getResultList();
     }
 
     @Override
-    public Group findByidGroup(int id) {
+    public Groups findByidGroup(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Group.class, id);
+        return session.get(Groups.class, id);
     }
 
     @Override
-    public void saveGroup(Group group) {
+    public void saveGroup(Groups groups) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(group);
+        session.save(groups);
     }
 
     @Override
     public void deleteGroup(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Group where id=:groupId").setParameter("groupId", id).executeUpdate();
+        session.createQuery("delete from Groups where id=:groupId").setParameter("groupId", id).executeUpdate();
     }
 
     @Override
-    public void updateGroup(int id, Group group) {
+    public void updateGroup(int id, Groups groups) {
         Session session = sessionFactory.getCurrentSession();
-        Group group1 = findByidGroup(id);
-        group1.setGroupName(group.getGroupName());
-        group1.setStart(group.getStart());
-        group1.setFinish(group.getFinish());
-        session.merge(group1);
+        Groups groups1 = findByidGroup(id);
+        groups1.setGroupName(groups.getGroupName());
+        groups1.setDataStart(groups.getDataStart());
+        groups1.setDataFinish(groups.getDataFinish());
+        session.merge(groups1);
     }
 
     @Override
     public void clearGroup() {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Group ").executeUpdate();
+        session.createQuery("delete from Groups ").executeUpdate();
     }
 
     // TODO: Student
@@ -210,7 +210,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         student1.setFirst_name(student.getFirst_name());
         student1.setLast_name(student.getLast_name());
         student1.setEmail(student.getEmail());
-        student1.setStudentFormat(student.getStudentFormat());
+        student1.setStudentforms(student.getStudentforms());
         session.merge(student1);
     }
 

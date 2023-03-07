@@ -7,42 +7,29 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "student")
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "fisrt_name")
+    private long id;
+    @Column(name = "first_name")
     private String first_name;
     @Column(name = "last_name")
     private String last_name;
     @Column(name = "email")
     private String email;
-    @Column(name = "studyFormat")
-    private StudentFormat studentFormat;
+    @Column(name = "studentFormat")
+    private Studentforms studentforms;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "groups_id")
+    private Groups group;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "group_id")
-//    private Group group;
-
-    public Student(String first_name, String last_name, String email, StudentFormat studentFormat) {
+    public Student(String first_name, String last_name, String email, Studentforms studentforms) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
-        this.studentFormat = studentFormat;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-               "id->" + id +
-               ", first_name->'" + first_name + '\'' +
-               ", last_name->'" + last_name + '\'' +
-               ", email->'" + email + '\'' +
-               ", studentFormat->" + studentFormat +
-               '}';
+        this.studentforms = studentforms;
     }
 }

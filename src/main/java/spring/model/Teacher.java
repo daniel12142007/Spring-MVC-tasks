@@ -7,23 +7,22 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "teacher")
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     @Column(name = "first_name")
     private String first_name;
     @Column(name = "last_name")
     private String last_name;
     @Column(name = "email")
     private String email;
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "course_id")
-//    private Course course;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
+    private Course course;
 
     public Teacher(String first_name, String last_name, String email) {
         this.first_name = first_name;
@@ -34,10 +33,11 @@ public class Teacher {
     @Override
     public String toString() {
         return "Teacher{" +
-               "id->" + id +
-               ", firts_name->'" + first_name + '\'' +
-               ", last_name->'" + last_name + '\'' +
-               ", email->'" + email + '\'' +
+               "id=" + id +
+               ", first_name='" + first_name + '\'' +
+               ", last_name='" + last_name + '\'' +
+               ", email='" + email + '\'' +
+//               ", course=" + course +
                '}';
     }
 }

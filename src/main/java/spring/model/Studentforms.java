@@ -1,6 +1,6 @@
 package spring.model;
 
-public enum StudentFormat {
+public enum Studentforms {
     OFFLINE,
     ONLINE
 }

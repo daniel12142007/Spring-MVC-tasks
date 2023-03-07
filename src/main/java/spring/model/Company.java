@@ -8,34 +8,34 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "company")
+@NoArgsConstructor
 @Setter
 @Getter
-@NoArgsConstructor
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @Column(name = "companyName")
     private String companyName;
-    @Column(name = "country")
-    private String country;
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Group> groups;
+    @Column(name = "locatedCountry")
+    private String locatedCountry;
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Course> courses;
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private List<Groups> groups;
 
-    public Company(String companyName, String country) {
+    public Company(String companyName, String locatedCountry) {
         this.companyName = companyName;
-        this.country = country;
+        this.locatedCountry = locatedCountry;
     }
 
     @Override
     public String toString() {
         return "Company{" +
-               "id->" + id +
-               ", companyName->'" + companyName + '\'' +
-               ", country->'" + country + '\'' +
+               "id=" + id +
+               ", companyName='" + companyName + '\'' +
+               ", locatedCountry='" + locatedCountry + '\'' +
+//               ", courses=" + courses +
                '}';
     }
 }
