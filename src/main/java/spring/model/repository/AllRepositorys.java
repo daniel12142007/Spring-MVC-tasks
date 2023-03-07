@@ -136,6 +136,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         session.createQuery("delete from Teacher ").executeUpdate();
     }
+
     // TODO: Group
     @Override
     public List<Group> findAllGroup() {
@@ -176,34 +177,46 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         session.createQuery("delete from Group ").executeUpdate();
     }
+
     // TODO: Student
     @Override
     public List<Student> findAllStudent() {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("select s from Student s", Student.class).getResultList();
     }
 
     @Override
     public Student findByidStudent(int id) {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Student.class, id);
     }
 
     @Override
     public void saveStudent(Student student) {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.save(student);
     }
 
     @Override
     public void deleteStudent(int id) {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Student where id=:studentId").setParameter("studentId", id).executeUpdate();
     }
 
     @Override
     public void updateStudent(int id, Student student) {
-
+        Session session = sessionFactory.getCurrentSession();
+        Student student1 = findByidStudent(id);
+        student1.setFirst_name(student.getFirst_name());
+        student1.setLast_name(student.getLast_name());
+        student1.setEmail(student.getEmail());
+        student1.setStudentFormat(student.getStudentFormat());
+        session.merge(student1);
     }
 
     @Override
     public void clearStudent() {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Student ").executeUpdate();
     }
 }
