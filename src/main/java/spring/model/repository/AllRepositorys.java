@@ -95,7 +95,47 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         session.createQuery("delete from Course ").executeUpdate();
     }
+
     // TODO: Teacher
+    @Override
+    public List<Teacher> findAllTeacher() {
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("select t from Teacher t", Teacher.class).getResultList();
+    }
+
+    @Override
+    public Teacher findByidTeacher(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Teacher.class, id);
+    }
+
+    @Override
+    public void saveTeacher(Teacher teacher) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(teacher);
+    }
+
+    @Override
+    public void deleteTeacher(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Teacher where id=:teacherId").setParameter("teacherId", id).executeUpdate();
+    }
+
+    @Override
+    public void updateTeacher(int id, Teacher teacher) {
+        Session session = sessionFactory.getCurrentSession();
+        Teacher teacher1 = findByidTeacher(id);
+        teacher1.setFirst_name(teacher.getFirst_name());
+        teacher1.setLast_name(teacher.getLast_name());
+        teacher1.setEmail(teacher.getEmail());
+        session.merge(teacher1);
+    }
+
+    @Override
+    public void clearTeacher() {
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Teacher ").executeUpdate();
+    }
     // TODO: Student
 
     @Override
@@ -155,38 +195,6 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
 
     @Override
     public void clearStudent() {
-
-    }
-
-
-    @Override
-    public List<Teacher> findAllTeacher() {
-        Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select t from Teacher t", Teacher.class).getResultList();
-    }
-
-    @Override
-    public Teacher findByidTeacher(int id) {
-        return null;
-    }
-
-    @Override
-    public void saveTeacher(Teacher teacher) {
-
-    }
-
-    @Override
-    public void deleteTeacher(int id) {
-
-    }
-
-    @Override
-    public void updateTeacher(int id, Teacher teacher) {
-
-    }
-
-    @Override
-    public void clearTeacher() {
 
     }
 //    @Override
