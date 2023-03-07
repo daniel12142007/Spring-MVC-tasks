@@ -136,38 +136,47 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
         Session session = sessionFactory.getCurrentSession();
         session.createQuery("delete from Teacher ").executeUpdate();
     }
-    // TODO: Student
-
+    // TODO: Group
     @Override
     public List<Group> findAllGroup() {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("select g from Group g", Group.class).getResultList();
     }
 
     @Override
     public Group findByidGroup(int id) {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Group.class, id);
     }
 
     @Override
     public void saveGroup(Group group) {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.save(group);
     }
 
     @Override
     public void deleteGroup(int id) {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Group where id=:groupId").setParameter("groupId", id).executeUpdate();
     }
 
     @Override
     public void updateGroup(int id, Group group) {
-
+        Session session = sessionFactory.getCurrentSession();
+        Group group1 = findByidGroup(id);
+        group1.setGroupName(group.getGroupName());
+        group1.setStart(group.getStart());
+        group1.setFinish(group.getFinish());
+        session.merge(group1);
     }
 
     @Override
     public void clearGroup() {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("delete from Group ").executeUpdate();
     }
-
+    // TODO: Student
     @Override
     public List<Student> findAllStudent() {
         return null;
@@ -197,44 +206,4 @@ public class AllRepositorys implements Repositorys<Company, Course, Group, Teach
     public void clearStudent() {
 
     }
-//    @Override
-//    public List<Person> findAll() {
-//        Session session = sessionFactory.getCurrentSession();
-//        return session.createQuery( "select c from Person c", Person.class ).getResultList();
-//    }
-//
-//    @Override
-//    public Person findById(int id) {
-//        Session session = sessionFactory.getCurrentSession();
-//        return session.get( Person.class, id );
-//    }
-//
-//
-//    @Override
-//    public void save(Person person) {
-//        Session session = sessionFactory.getCurrentSession();
-//        session.save( person );
-//    }
-//
-//    @Override
-//    public void delete(int id) {
-//        Session session = sessionFactory.getCurrentSession();
-//        session.createQuery( "delete from Person where id=:personId" ).setParameter( "personId", id ).executeUpdate();
-//    }
-//
-//    @Override
-//    public void updatePerson(int id,Person person) {
-//        Session session = sessionFactory.getCurrentSession();
-//        Person person1 =findById(id);
-//        person1.setName( person.getName() );
-//        person1.setAge( person.getAge() );
-//        session.merge(person1);
-//    }
-//
-//    @Override
-//    public void clear() {
-//        Session session = sessionFactory.getCurrentSession();
-//        session.createQuery("delete from Person ").executeUpdate();
-//    }
-//}
 }
