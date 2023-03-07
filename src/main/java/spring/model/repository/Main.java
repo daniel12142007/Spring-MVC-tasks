@@ -28,7 +28,7 @@ public class Main {
 //        student.setGroup(group);
 //        studentList.add(student);
 //        group.setStudent(studentList);
-        AllRepository allRepository = new AllRepository();
+        AllRepositorys allRepository = new AllRepositorys();
         allRepository.saveCompany(company);
     }
 }
