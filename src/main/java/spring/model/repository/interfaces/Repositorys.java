@@ -1,11 +1,8 @@
 package spring.model.repository.interfaces;
 
-import org.springframework.stereotype.Repository;
-
-import javax.transaction.Transactional;
 import java.util.List;
 
-public interface Repositorys<Company, Course, Group, Teacher, Student> {
+public interface Repositorys<Company, Course, Groups, Teacher, Student> {
     // TODO: Company
     List<Company> findAllCompany();
 
@@ -34,15 +31,15 @@ public interface Repositorys<Company, Course, Group, Teacher, Student> {
 
     // TODO: Groups
 
-    List<Group> findAllGroup();
+    List<Groups> findAllGroup();
 
-    Group findByidGroup(int id);
+    Groups findByidGroup(int id);
 
-    void saveGroup(Group group);
+    void saveGroup(Groups groups);
 
     void deleteGroup(int id);
 
-    void updateGroup(int id, Group group);
+    void updateGroup(int id, Groups groups);
 
     void clearGroup();
 

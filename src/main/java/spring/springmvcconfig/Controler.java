@@ -16,11 +16,14 @@ public class Controler {
     public Controler(Repositorys<Company, Course, Groups, Teacher, Student> repositorys) {
         this.repositorys = repositorys;
     }
-
     @GetMapping("/")
-    public String findAll(Model model) {
-        model.addAttribute("all", repositorys.findAllCompany());
-        return "find-allCompany";
+    public String menu(Model model) {
+        model.addAttribute("company",repositorys.findAllCompany());
+        model.addAttribute("courses",repositorys.findAllCourse());
+        model.addAttribute("groups",repositorys.findAllGroup());
+        model.addAttribute("teachers",repositorys.findAllTeacher());
+        model.addAttribute("student",repositorys.findAllStudent());
+        return "menu";
     }
 
     @PostMapping("/saveCompany")
