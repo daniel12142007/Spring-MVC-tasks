@@ -15,6 +15,7 @@
 <button><a href="/table/company">Company table</a></button>
 <button><a href="/table/course">register Course</a></button>
 <button><a href="/table/group">register Group</a></button>
+<button><a href="/table/student">register Student</a></button>
 
 <h1>Teacher</h1>
 <table border="2px">
@@ -50,46 +51,5 @@
     </tbody>
 </table>
 <button><a href="/teacherForm">register Teacher</a></button>
-<h1>Student</h1>
-<table border="2px">
-    <thead>
-    <th>Students ID:</th>
-    <th>Students:</th>
-    <th>last_name:</th>
-    <th>email:</th>
-    <th>studentforms:</th>
-    <th>Group ID:</th>
-    <th>delete:</th>
-    <th>update:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${student}" var="student">
-        <tr>
-            <td>${student.id}</td>
-            <td>${student.first_name}</td>
-            <td>${student.last_name}</td>
-            <td>${student.email}</td>
-            <td>${student.studentforms}</td>
-            <td>${student.group.id}</td>
-            <td>
-                <form action="/deleteStudent/${student.id}" method="get">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
-            <td>
-                <form action="/updateStudent/${student.id}" method="get">
-                    <button type="submit">update</button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<button><a href="/studentForm">register Student</a></button>
-<style>
-    h1 {
-        font-family: "Arial Black", serif;
-    }
-</style>
 </body>
 </html>

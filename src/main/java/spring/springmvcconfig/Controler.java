@@ -50,7 +50,7 @@ public class Controler {
     @GetMapping("/table/student")
     public String tableStudent(Model model) {
         model.addAttribute("student", repositorys.findAllStudent());
-        return "table-stuednt";
+        return "table-student";
     }
 
     // save Company
