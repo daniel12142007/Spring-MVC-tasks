@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import spring.model.*;
 import spring.model.repository.interfaces.Repositorys;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class Controler {
     private final Repositorys<Company, Course, Groups, Teacher, Student> repositorys;
@@ -110,57 +107,69 @@ public class Controler {
         model.addAttribute("company", company);
         return "findCompany";
     }
+
     //save groups
-    @PostMapping("/saveGroups")
-    private String saveGroups(
-            @RequestParam("groupName") String groupName,
-            @RequestParam("dataStart") String dataStart,
-            @RequestParam("dataFinish") String dataFinish,
+    @PostMapping("/saveTeacher")
+    private String saveTeacher(
+            @RequestParam("first_name") String first_name,
+            @RequestParam("last_name") String last_name,
+            @RequestParam("email") String email,
             @RequestParam("id") int id
     ) {
-        Company company = repositorys.findByIdCompany(id);
-        Groups groups = new Groups();
-        groups.setGroupName(groupName);
-        groups.setDataStart(dataStart);
-        groups.setDataFinish(dataFinish);
-        groups.setCompany(company);
-        repositorys.saveGroup(groups);
+        Course course = repositorys.findByIdCourse(id);
+        Teacher teacher = new Teacher();
+        teacher.setFirst_name(first_name);
+        teacher.setLast_name(last_name);
+        teacher.setEmail(email);
+        teacher.setCourse(course);
+        repositorys.saveTeacher(teacher);
         return "redirect:/";
     }
 
     // save forms groups
-    @GetMapping("/groupsForm")
-    public String saveFormGroups(Model model) {
-        model.addAttribute("all", repositorys.findAllCompany());
-        return "saveGroups";
+    @GetMapping("/teacherForm")
+    public String saveFormTeacher(Model model) {
+        model.addAttribute("all", repositorys.findAllCourse());
+        return "saveTeacher";
     }
 
+    // @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long id;
+//    @Column(name = "first_name")
+//    private String first_name;
+//    @Column(name = "last_name")
+//    private String last_name;
+//    @Column(name = "email")
+//    private String email;
+//    @Column(name = "studentFormat")
+//    private Studentforms studentforms;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "groups_id")
+//    private Groups group;
+    @PostMapping("/saveStudent")
+    private String saveStudent(
+            @RequestParam("first_name") String first_name,
+            @RequestParam("last_name") String last_name,
+            @RequestParam("email") String email,
+            @RequestParam("id") int id
+    ) {
+        Groups groups = repositorys.findByidGroup(id);
+        Student student = new Student();
+        student.setFirst_name(first_name);
+        student.setLast_name(last_name);
+        student.setEmail(email);
+        student.setGroup(groups);
+        repositorys.saveStudent(student);
+        return "redirect:/";
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // save forms groups
+    @GetMapping("/studentForm")
+    public String saveFormStudent(Model model) {
+        model.addAttribute("all", repositorys.findAllGroup());
+        return "saveStudent";
+    }
 
     @GetMapping("/updateCompany/{id}")
     public String updatePersonForm(@PathVariable("id") int id, Model model) {

@@ -81,7 +81,7 @@
     </c:forEach>
     </tbody>
 </table>
-<button><a href="">register Teacher</a></button>
+<button><a href="/teacherForm">register Teacher</a></button>
 <h1>Student</h1>
 <table border="2px">
     <thead>
@@ -104,10 +104,12 @@
     button {
         background: black;
     }
+
     a {
         color: white;
     }
-    h1{
+
+    h1 {
         font-family: "Arial Black", serif;
     }
 </style>
