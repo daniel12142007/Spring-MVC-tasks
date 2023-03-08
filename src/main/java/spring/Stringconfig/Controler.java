@@ -116,14 +116,14 @@ public class Controler {
         Course course = repositorys.findByIdCourse(idCourse);
         List<Course> courses = new ArrayList<>();
         courses.add(course);
-        Groups groups = new Groups();
-        groups.setGroupName(groupName);
-        groups.setDataStart(dataStart);
-        groups.setDataFinish(dataFinish);
-        groups.setCompany(company);
-        groups.setCourses(courses);
+        Groups group = new Groups();
+        group.setGroupName(groupName);
+        group.setDataStart(dataStart);
+        group.setDataFinish(dataFinish);
+        group.setCompany(company);
+        group.setCourses(courses);
         course.setCourses(courses);
-        repositorys.saveGroup(groups);
+        repositorys.saveGroup(group);
         repositorys.updateCourse(idCourse, course);
         return "redirect:/table/group";
 
@@ -184,13 +184,13 @@ public class Controler {
             @RequestParam("format") Studentforms studentforms,
             @RequestParam("id") int id
     ) {
-        Groups groups = repositorys.findByidGroup(id);
+        Groups group = repositorys.findByidGroup(id);
         Student student = new Student();
         student.setFirst_name(first_name);
         student.setLast_name(last_name);
         student.setEmail(email);
         student.setStudentforms(studentforms);
-        student.setGroup(groups);
+        student.setGroup(group);
         repositorys.saveStudent(student);
         return "redirect:/table/student";
     }
@@ -244,9 +244,9 @@ public class Controler {
 
     @GetMapping("/updateGroup/{id}")
     public String updateGroupForm(@PathVariable("id") int id, Model model) {
-        Groups groups = repositorys.findByidGroup(id);
-        model.addAttribute("groups", groups);
-        return "update-groups-form";
+        Groups group = repositorys.findByidGroup(id);
+        model.addAttribute("groups", group);
+        return "update-group-form";
     }
 
     @PostMapping("/updaterGroupPost/{id}")
@@ -255,11 +255,11 @@ public class Controler {
             @RequestParam("dataStart") String dataStart,
             @RequestParam("dataFinish") String dataFinish,
             @PathVariable int id) {
-        Groups groups = new Groups();
-        groups.setGroupName(groupName);
-        groups.setDataStart(dataStart);
-        groups.setDataFinish(dataFinish);
-        repositorys.updateGroup(id, groups);
+        Groups group = new Groups();
+        group.setGroupName(groupName);
+        group.setDataStart(dataStart);
+        group.setDataFinish(dataFinish);
+        repositorys.updateGroup(id, group);
         return "redirect:/";
     }
 

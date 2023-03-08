@@ -24,20 +24,20 @@
     <th>update:</th>
     </thead>
     <tbody>
-    <c:forEach items="${groups}" var="groups">
+    <c:forEach items="${group}" var="group">
         <tr>
-            <td>${groups.id}</td>
-            <td>${groups.groupName}</td>
-            <td>${groups.dataStart}</td>
-            <td>${groups.dataFinish}</td>
-            <td>${groups.company.id}</td>
+            <td>${group.id}</td>
+            <td>${group.groupName}</td>
+            <td>${group.dataStart}</td>
+            <td>${group.dataFinish}</td>
+            <td>${group.company.id}</td>
             <td>
-                <form action="/deleteGroup/${groups.id}" method="get">
+                <form action="/deleteGroup/${group.id}" method="get">
                     <button type="submit">delete</button>
                 </form>
             </td>
             <td>
-                <form action="/updateGroup/${groups.id}" method="get">
+                <form action="/updateGroup/${group.id}" method="get">
                     <button type="submit">update</button>
                 </form>
             </td>

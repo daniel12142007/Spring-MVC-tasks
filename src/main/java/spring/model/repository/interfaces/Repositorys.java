@@ -31,15 +31,15 @@ public interface Repositorys<Company, Course, Groups, Teacher, Student> {
 
     // TODO: Groups
 
-    List<Groups> findAllGroup();
+    List<spring.model.Groups> findAllGroup();
 
-    Groups findByidGroup(int id);
+    spring.model.Groups findByidGroup(int id);
 
-    void saveGroup(Groups groups);
+    void saveGroup(spring.model.Groups groups);
 
     void deleteGroup(int id);
 
-    void updateGroup(int id, Groups groups);
+    void updateGroup(int id, spring.model.Groups groups);
 
     void clearGroup();
 

@@ -151,32 +151,36 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public Groups findByidGroup(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Groups.class, id);
+        try {
+            return session.get(Groups.class, id);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
-    public void saveGroup(Groups groups) {
+    public void saveGroup(Groups group) {
         Session session = sessionFactory.getCurrentSession();
 //        session.beginTransaction();
-        session.save(groups);
+        session.save(group);
 //        session.getTransaction().commit();
     }
 
     @Override
     public void deleteGroup(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Groups groups = findByidGroup(id);
-        session.delete(groups);
+        Groups group = findByidGroup(id);
+        session.delete(group);
     }
 
     @Override
-    public void updateGroup(int id, Groups groups) {
+    public void updateGroup(int id, Groups group) {
         Session session = sessionFactory.getCurrentSession();
-        Groups groups1 = findByidGroup(id);
-        groups1.setGroupName(groups.getGroupName());
-        groups1.setDataStart(groups.getDataStart());
-        groups1.setDataFinish(groups.getDataFinish());
-        session.merge(groups1);
+        Groups group1 = findByidGroup(id);
+        group1.setGroupName(group.getGroupName());
+        group1.setDataStart(group.getDataStart());
+        group1.setDataFinish(group.getDataFinish());
+        session.merge(group1);
     }
 
     @Override

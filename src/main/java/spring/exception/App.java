@@ -35,7 +35,6 @@ public class App {
         group.setCompany(company);
         groups.add(group);
         company.setGroups(groups);
-//        repository1.saveGroup(group);
         repository1.save(company);
     }
 }

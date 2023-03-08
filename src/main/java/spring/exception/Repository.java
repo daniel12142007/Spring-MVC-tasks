@@ -23,10 +23,10 @@ public class Repository {
             session.getTransaction().commit();
         }
     }
-    public void saveGroup(Groups groups){
+    public void saveGroup(Groups group){
         try(Session session = sessionFactory.openSession()){
 //            session.beginTransaction();
-            session.save(groups);
+            session.save(group);
 //            session.getTransaction().commit();
         }
 

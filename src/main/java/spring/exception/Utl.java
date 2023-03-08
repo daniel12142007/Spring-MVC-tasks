@@ -22,7 +22,6 @@ public class Utl {
                 .addAnnotatedClass(Course.class)
                 .addAnnotatedClass(Groups.class)
                 .addAnnotatedClass(Teacher.class)
-//                .addAnnotatedClass(Repository.class)
                 .addAnnotatedClass(Student.class)
                 .buildSessionFactory();
     }

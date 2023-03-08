@@ -22,9 +22,9 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
     private Teacher teacher;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany( cascade = CascadeType.ALL)
     @JoinTable(
             name = "group_courses",
             joinColumns = {@JoinColumn(name = "group_id")},

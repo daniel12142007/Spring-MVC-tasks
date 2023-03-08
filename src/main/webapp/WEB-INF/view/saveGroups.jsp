@@ -27,7 +27,7 @@
         <label for="${idCourse.id}">${idCourse.courName}</label><br>
     </c:forEach>
     <h1>select Course</h1>
-    <input type="submit" value="register groups">
+    <input type="submit" value="register group">
 </form>
 </body>
 </html>

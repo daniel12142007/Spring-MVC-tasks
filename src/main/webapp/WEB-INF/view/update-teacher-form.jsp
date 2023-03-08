@@ -15,7 +15,7 @@
     <label>first_name:</label><input value="${teacher.first_name}" type="text" name="first_name">
     <label>last_name:</label><input value="${teacher.last_name}" type="text" name="last_name">
     <label>email:</label><input value="${teacher.email}" type="text" name="email">
-    <input type="submit" value="update-groups">
+    <input type="submit" value="update-group">
 </form>
 </body>
 </html>
