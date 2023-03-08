@@ -24,13 +24,12 @@ public class Course {
     private Company company;
     @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
     private Teacher teacher;
-    @ManyToMany( cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "group_courses",
-            joinColumns = {@JoinColumn(name = "group_id")},
-            inverseJoinColumns = {@JoinColumn(name = "course_id")}
-    )
-    private List<Course> courses;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "course_group",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private List<Groups> groups;
+
     public Course(String courName, String duration) {
         this.courName = courName;
         this.duration = duration;

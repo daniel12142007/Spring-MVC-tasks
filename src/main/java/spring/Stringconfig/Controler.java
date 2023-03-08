@@ -24,11 +24,6 @@ public class Controler {
     // menu
     @GetMapping("/")
     public String menu(Model model) {
-        model.addAttribute("company", repositorys.findAllCompany());
-        model.addAttribute("courses", repositorys.findAllCourse());
-        model.addAttribute("groups", repositorys.findAllGroup());
-        model.addAttribute("teachers", repositorys.findAllTeacher());
-        model.addAttribute("student", repositorys.findAllStudent());
         return "menu";
     }
 
@@ -44,11 +39,18 @@ public class Controler {
         return "table-course";
     }
 
+//    @GetMapping("/table/group")
+//    public String tableGroup(Model model) {
+//        model.addAttribute("groups", repositorys.findAllGroup());
+//        return "table-group";
+//    }
+
     @GetMapping("/table/group")
     public String tableGroup(Model model) {
         model.addAttribute("groups", repositorys.findAllGroup());
         return "table-group";
     }
+
 
     @GetMapping("/table/student")
     public String tableStudent(Model model) {
@@ -113,18 +115,19 @@ public class Controler {
             @RequestParam("idCourse") int idCourse
     ) {
         Company company = repositorys.findByIdCompany(id);
-        Course course = repositorys.findByIdCourse(idCourse);
         List<Course> courses = new ArrayList<>();
-        courses.add(course);
+        List<Groups> groups = new ArrayList<>();
+        Course course = repositorys.findByIdCourse(idCourse);
         Groups group = new Groups();
+        courses.add(course);
         group.setGroupName(groupName);
         group.setDataStart(dataStart);
         group.setDataFinish(dataFinish);
         group.setCompany(company);
         group.setCourses(courses);
-        course.setCourses(courses);
+        groups.add(group);
+        course.setGroups(groups);
         repositorys.saveGroup(group);
-        repositorys.updateCourse(idCourse, course);
         return "redirect:/table/group";
 
     }

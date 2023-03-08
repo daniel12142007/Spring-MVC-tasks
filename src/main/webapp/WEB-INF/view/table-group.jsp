@@ -24,7 +24,7 @@
     <th>update:</th>
     </thead>
     <tbody>
-    <c:forEach items="${group}" var="group">
+    <c:forEach items="${groups}" var="group">
         <tr>
             <td>${group.id}</td>
             <td>${group.groupName}</td>

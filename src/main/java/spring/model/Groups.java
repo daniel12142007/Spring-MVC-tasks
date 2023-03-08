@@ -26,7 +26,7 @@ public class Groups {
     private Company company;
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<Student> students;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "groups", cascade = CascadeType.ALL)
     private List<Course> courses;
 
 

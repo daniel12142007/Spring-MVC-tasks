@@ -26,7 +26,6 @@
         <input type="radio" id="${idCourse.id}" name="idCourse" value="${idCourse.id}">
         <label for="${idCourse.id}">${idCourse.courName}</label><br>
     </c:forEach>
-    <h1>select Course</h1>
     <input type="submit" value="register group">
 </form>
 </body>
