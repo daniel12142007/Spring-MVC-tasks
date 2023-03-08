@@ -13,43 +13,10 @@
 </head>
 <body>
 <button><a href="/table/company">Company table</a></button>
-<button><a href="/table/course">register Course</a></button>
-<button><a href="/table/group">register Group</a></button>
-<button><a href="/table/student">register Student</a></button>
+<button><a href="/table/course">Course table</a></button>
+<button><a href="/table/group">Group table</a></button>
+<button><a href="/table/student">Student table</a></button>
+<button><a href="/table/teacher">Teacher table</a></button>
 
-<h1>Teacher</h1>
-<table border="2px">
-    <thead>
-    <th>Teachers ID:</th>
-    <th>Teachers:</th>
-    <th>last_name:</th>
-    <th>email:</th>
-    <th>Course ID:</th>
-    <th>delete:</th>
-    <th>update:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${teachers}" var="teacher">
-        <tr>
-            <td>${teacher.id}</td>
-            <td>${teacher.first_name}</td>
-            <td>${teacher.last_name}</td>
-            <td>${teacher.email}</td>
-            <td>${teacher.course.id}</td>
-            <td>
-                <form action="/deleteTeacher/${teacher.id}" method="get">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
-            <td>
-                <form action="/updateTeacher/${teacher.id}" method="get">
-                    <button type="submit">update</button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<button><a href="/teacherForm">register Teacher</a></button>
 </body>
 </html>

@@ -24,7 +24,7 @@ public class Controler {
 //        model.addAttribute("company", repositorys.findAllCompany());
 //        model.addAttribute("courses", repositorys.findAllCourse());
 //        model.addAttribute("groups", repositorys.findAllGroup());
-        model.addAttribute("teachers", repositorys.findAllTeacher());
+//        model.addAttribute("teachers", repositorys.findAllTeacher());
 //        model.addAttribute("student", repositorys.findAllStudent());
         return "menu";
     }
@@ -51,6 +51,12 @@ public class Controler {
     public String tableStudent(Model model) {
         model.addAttribute("student", repositorys.findAllStudent());
         return "table-student";
+    }
+
+    @GetMapping("/table/teacher")
+    public String tableTeacher(Model model) {
+        model.addAttribute("teachers", repositorys.findAllTeacher());
+        return "table-tacher";
     }
 
     // save Company
