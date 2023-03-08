@@ -73,9 +73,9 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void saveCourse(Course course) {
         Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
+//        session.beginTransaction();
         session.save(course);
-        session.getTransaction().commit();
+//        session.getTransaction().commit();
     }
 
     @Override
@@ -170,9 +170,9 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void saveGroup(Groups groups) {
         Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
+//        session.beginTransaction();
         session.save(groups);
-        session.getTransaction().commit();
+//        session.getTransaction().commit();
     }
 
     @Override

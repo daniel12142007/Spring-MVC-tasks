@@ -74,7 +74,7 @@ public class Controler {
         company.setCompanyName(companyName);
         company.setLocatedCountry(locatedCountry);
         repositorys.saveCompany(company);
-        return "redirect:/";
+        return "redirect:/table/company";
     }
 
     //save forms company
@@ -95,7 +95,7 @@ public class Controler {
         course.setDuration(duration);
         course.setCompany(company);
         repositorys.saveCourse(course);
-        return "redirect:/";
+        return "redirect:/table/course";
     }
 
     // save forms course
@@ -126,16 +126,8 @@ public class Controler {
         groups.setCourses(courses);
         course.setCourses(courses);
         repositorys.saveGroup(groups);
-        return "redirect:/";
-//        Course course = new Course("Java");
-//        Repositoryu repositoryu = new Repositoryu();
-//        repositoryu.saveCourse(course);
-//        List<Course> group1Courses = new ArrayList<>();
-//        group1Courses.add(course);
-//        Groups group = new Groups("Group 1");
-//        group.setCourses(group1Courses);
-//        course.setCourses(group1Courses);
-//        repositoryu.save(group);
+        repositorys.updateCourse(idCourse, course);
+        return "redirect:/table/group";
 
     }
 
@@ -143,7 +135,7 @@ public class Controler {
     @GetMapping("/groupsForm")
     public String saveFormGroups(Model model) {
         model.addAttribute("all", repositorys.findAllCompany());
-        model.addAttribute("course", repositorys.findbyidGroupsCourses());
+        model.addAttribute("course", repositorys.findAllCourse());
         return "saveGroups";
     }
 
@@ -176,7 +168,7 @@ public class Controler {
         teacher.setEmail(email);
         teacher.setCourse(course);
         repositorys.saveTeacher(teacher);
-        return "redirect:/";
+        return "redirect:/table/teacher";
     }
 
     // save forms groups
@@ -202,7 +194,7 @@ public class Controler {
         student.setStudentforms(studentforms);
         student.setGroup(groups);
         repositorys.saveStudent(student);
-        return "redirect:/";
+        return "redirect:/table/student";
     }
 
     // save forms groups
