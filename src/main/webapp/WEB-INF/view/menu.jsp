@@ -12,59 +12,104 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Company</h1>
 <table border="2px">
     <thead>
     <th>Companies ID:</th>
     <th>Company:</th>
-    <th>Courses:</th>
-    <th>Groups:</th>
-    <th>Teachers:</th>
-    <th>Students:</th>
     </thead>
     <tbody>
-    <%--     model.addAttribute("groups",repositorys.findAllGroup());
-            model.addAttribute("teachers",repositorys.findAllTeacher());
-            model.addAttribute("student",repositorys.findAllStudent());--%>
-    <tr>
-        <c:forEach items="${company}" var="com">
+    <c:forEach items="${company}" var="com">
+        <tr>
             <td>${com.id}</td>
             <td>${com.companyName}</td>
-        </c:forEach>
-        <c:forEach items="${courses}" var="cour">
-            <td>${cour.courName}</td>
-        </c:forEach>
-        <c:forEach items="${groups}" var="groups">
-            <td>${groups.groupName}</td>
-        </c:forEach>
-        <c:forEach items="${teachers}" var="teacher">
-            <td>${teacher.first_name}</td>
-        </c:forEach>
-        <c:forEach items="${student}" var="student">
-            <td>${student.first_name}</td>
-        </c:forEach>
-    </tr>
-
-    </tbody>
-</table>
-</body>
-</html>
-<%--<table border="2px">
-    <thead>
-    <th>id:</th>
-    <th>groupName:</th>
-    <th>dataStart:</th>
-    <th>dataFinish:</th>
-    <th>company_id:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${all}" var="arr">
-        <tr>
-            <td>${arr.id}</td>
-            <td>${arr.groupName}</td>
-            <td>${arr.dataStart}</td>
-            <td>${arr.dataFinish}</td>
-            <td>${arr.company.id}</td>
         </tr>
     </c:forEach>
     </tbody>
-</table>--%>
+</table>
+<button><a href="/companyForm">register Company</a></button>
+<h1>Course</h1>
+<table border="2px">
+    <thead>
+    <th>Courses ID:</th>
+    <th>Courses:</th>
+    <th>Company ID:</th>
+    </thead>
+    <tbody>
+    <c:forEach items="${courses}" var="cour">
+        <tr>
+            <td>${cour.id}</td>
+            <td>${cour.courName}</td>
+            <td>${cour.company.id}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<button><a href="/courseForm">register Course</a></button>
+<h1>Groups</h1>
+<table border="2px">
+    <thead>
+    <th>Groups ID:</th>
+    <th>Groups:</th>
+    <th>Company ID:</th>
+    </thead>
+    <tbody>
+    <c:forEach items="${groups}" var="groups">
+        <tr>
+            <td>${groups.id}</td>
+            <td>${groups.groupName}</td>
+            <td>${groups.company.id}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<button><a href="/groupsForm">register Groups</a></button>
+<h1>Teacher</h1>
+<table border="2px">
+    <thead>
+    <th>Teachers ID:</th>
+    <th>Teachers:</th>
+    <th>Course ID:</th>
+    </thead>
+    <tbody>
+    <c:forEach items="${teachers}" var="teacher">
+        <tr>
+            <td>${teacher.id}</td>
+            <td>${teacher.first_name}</td>
+            <td>${teacher.course.id}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<button><a href="">register Teacher</a></button>
+<h1>Student</h1>
+<table border="2px">
+    <thead>
+    <th>Students ID:</th>
+    <th>Students:</th>
+    <th>Group ID:</th>
+    </thead>
+    <tbody>
+    <c:forEach items="${student}" var="student">
+        <tr>
+            <td>${student.id}</td>
+            <td>${student.first_name}</td>
+            <td>${student.group.id}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<button><a href="">register Student</a></button>
+<style>
+    button {
+        background: black;
+    }
+    a {
+        color: white;
+    }
+    h1{
+        font-family: "Arial Black", serif;
+    }
+</style>
+</body>
+</html>

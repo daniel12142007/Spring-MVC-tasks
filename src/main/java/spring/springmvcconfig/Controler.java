@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import spring.model.*;
 import spring.model.repository.interfaces.Repositorys;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class Controler {
     private final Repositorys<Company, Course, Groups, Teacher, Student> repositorys;
@@ -16,27 +19,82 @@ public class Controler {
     public Controler(Repositorys<Company, Course, Groups, Teacher, Student> repositorys) {
         this.repositorys = repositorys;
     }
+
+    // menu
     @GetMapping("/")
     public String menu(Model model) {
-        model.addAttribute("company",repositorys.findAllCompany());
-        model.addAttribute("courses",repositorys.findAllCourse());
-        model.addAttribute("groups",repositorys.findAllGroup());
-        model.addAttribute("teachers",repositorys.findAllTeacher());
-        model.addAttribute("student",repositorys.findAllStudent());
+        model.addAttribute("company", repositorys.findAllCompany());
+        model.addAttribute("courses", repositorys.findAllCourse());
+        model.addAttribute("groups", repositorys.findAllGroup());
+        model.addAttribute("teachers", repositorys.findAllTeacher());
+        model.addAttribute("student", repositorys.findAllStudent());
         return "menu";
     }
 
+    // save Company
     @PostMapping("/saveCompany")
-    private String saveCompany(@RequestParam("companyName") String companyName, @RequestParam("locatedCountry") String locatedCountry) {
+    private String saveCompany(
+            @RequestParam("companyName") String companyName,
+            @RequestParam("locatedCountry") String locatedCountry
+    ) {
         Company company = new Company();
         company.setCompanyName(companyName);
         company.setLocatedCountry(locatedCountry);
+        repositorys.saveCompany(company);
         return "redirect:/";
     }
 
+    //save forms company
     @GetMapping("/companyForm")
     public String saveFormCompany() {
-        return "formCompany";
+        return "save";
+    }
+
+    //save Course
+    @PostMapping("/saveCourse")
+    private String saveCourse(
+            @RequestParam("courName") String courName,
+            @RequestParam("duration") String duration,
+            @RequestParam("id") int id) {
+        Company company = repositorys.findByIdCompany(id);
+        Course course = new Course();
+        course.setCourName(courName);
+        course.setDuration(duration);
+        course.setCompany(company);
+        repositorys.saveCourse(course);
+        return "redirect:/";
+    }
+
+    // save forms course
+    @GetMapping("/courseForm")
+    public String saveFormCourse(Model model) {
+        model.addAttribute("all", repositorys.findAllCompany());
+        return "saveCourse";
+    }
+
+    //save groups
+    @PostMapping("/saveGroups")
+    private String saveGroups(
+            @RequestParam("groupName") String groupName,
+            @RequestParam("dataStart") String dataStart,
+            @RequestParam("dataFinish") String dataFinish,
+            @RequestParam("id") int id
+    ) {
+        Company company = repositorys.findByIdCompany(id);
+        Groups groups = new Groups();
+        groups.setGroupName(groupName);
+        groups.setDataStart(dataStart);
+        groups.setDataFinish(dataFinish);
+        groups.setCompany(company);
+        repositorys.saveGroup(groups);
+        return "redirect:/";
+    }
+
+    // save forms groups
+    @GetMapping("/groupsForm")
+    public String saveFormGroups(Model model) {
+        model.addAttribute("all", repositorys.findAllCompany());
+        return "saveGroups";
     }
 
     @GetMapping("/deletebyCompany/{id}")
@@ -52,19 +110,73 @@ public class Controler {
         model.addAttribute("company", company);
         return "findCompany";
     }
+    //save groups
+    @PostMapping("/saveGroups")
+    private String saveGroups(
+            @RequestParam("groupName") String groupName,
+            @RequestParam("dataStart") String dataStart,
+            @RequestParam("dataFinish") String dataFinish,
+            @RequestParam("id") int id
+    ) {
+        Company company = repositorys.findByIdCompany(id);
+        Groups groups = new Groups();
+        groups.setGroupName(groupName);
+        groups.setDataStart(dataStart);
+        groups.setDataFinish(dataFinish);
+        groups.setCompany(company);
+        repositorys.saveGroup(groups);
+        return "redirect:/";
+    }
+
+    // save forms groups
+    @GetMapping("/groupsForm")
+    public String saveFormGroups(Model model) {
+        model.addAttribute("all", repositorys.findAllCompany());
+        return "saveGroups";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("/updateCompany/{id}")
     public String updatePersonForm(@PathVariable("id") int id, Model model) {
         Company company = repositorys.findByIdCompany(id);
-        model.addAttribute("person", company);
+        model.addAttribute("company", company);
         return "update-company-form";
     }
 
-    @PostMapping("/real/update/{id}")
-    public String updatePerson(@RequestParam("name") String name, @RequestParam("countr") String country, @PathVariable int id) {
+    @PostMapping("/updateCompanyPost/{id}")
+    public String updatePerson(
+            @RequestParam("companyName") String companyName,
+            @RequestParam("locatedCountry") String locatedCountry,
+            @PathVariable int id) {
         Company company = new Company();
-        company.setCompanyName(name);
-        company.setLocatedCountry(country);
+        company.setCompanyName(companyName);
+        company.setLocatedCountry(locatedCountry);
         repositorys.updateCompany(id, company);
         return "redirect:/";
     }

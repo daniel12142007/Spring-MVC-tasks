@@ -3,6 +3,7 @@ package spring.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import spring.model.enums.Studentforms;
 
 import javax.persistence.*;
 
@@ -31,5 +32,17 @@ public class Student {
         this.last_name = last_name;
         this.email = email;
         this.studentforms = studentforms;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+               "id=" + id +
+               ", first_name='" + first_name + '\'' +
+               ", last_name='" + last_name + '\'' +
+               ", email='" + email + '\'' +
+               ", studentforms=" + studentforms +
+//               ", group=" + group +
+               '}';
     }
 }

@@ -18,7 +18,7 @@ public class Course {
     @Column(name = "courName")
     private String courName;
     @Column(name = "duration")
-    private int duration;
+    private String duration;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
     private Company company;
@@ -28,7 +28,7 @@ public class Course {
     @JoinColumn(name = "groups_id")
     private List<Groups> groups;
 
-    public Course(String courName, int duration) {
+    public Course(String courName, String duration) {
         this.courName = courName;
         this.duration = duration;
     }
