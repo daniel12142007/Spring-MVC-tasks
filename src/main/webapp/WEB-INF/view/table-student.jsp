@@ -48,5 +48,6 @@
     </tbody>
 </table>
 <button><a href="/studentForm">register Student</a></button>
+<button><a href="/">back</a></button>
 </body>
 </html>

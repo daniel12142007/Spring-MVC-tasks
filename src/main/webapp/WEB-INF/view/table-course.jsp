@@ -44,5 +44,6 @@
     </tbody>
 </table>
 <button><a href="/courseForm">register Course</a></button>
+<button><a href="/">back</a></button>
 </body>
 </html>

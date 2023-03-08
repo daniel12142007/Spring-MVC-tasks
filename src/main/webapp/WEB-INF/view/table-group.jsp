@@ -46,5 +46,6 @@
     </tbody>
 </table>
 <button><a href="/groupsForm">register Groups</a></button>
+<button><a href="/">back</a></button>
 </body>
 </html>

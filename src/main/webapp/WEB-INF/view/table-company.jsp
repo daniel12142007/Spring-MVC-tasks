@@ -42,10 +42,6 @@
     </tbody>
 </table>
 <button><a href="/companyForm">register Company</a></button>
-<style>
-    h1 {
-        font-family: "Arial Black", serif;
-    }
-</style>
+<button><a href="/">back</a></button>
 </body>
 </html>
