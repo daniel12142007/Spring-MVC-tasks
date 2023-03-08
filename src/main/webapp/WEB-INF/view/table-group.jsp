@@ -45,6 +45,41 @@
     </c:forEach>
     </tbody>
 </table>
+<table>
+    <th>course:</th>
+    <th>groups:</th>
+    <tr>
+    <td>
+    <table border="2px">
+        <thead>
+        <th>Course ID:</th>
+        </thead>
+        <tbody>
+        <c:forEach items="${course_groups}" var="c">
+            <tr>
+                <td>${c.id}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    </td>
+    <td>
+    <table border="2px">
+        <thead>
+        <th>Groups ID:</th>
+        </thead>
+        <tbody>
+        <c:forEach items="${course_groups}" var="c">
+            <tr>
+                <td>${c.id}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    </td>
+    </tr>
+</table>
+
 <button><a href="/groupsForm">register Groups</a></button>
 <button><a href="/">back</a></button>
 </body>

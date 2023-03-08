@@ -48,6 +48,8 @@ public class Controler {
     @GetMapping("/table/group")
     public String tableGroup(Model model) {
         model.addAttribute("groups", repositorys.findAllGroup());
+        model.addAttribute("course_groups",repositorys.findbyidGroupsCourses());
+        model.addAttribute("groups_course",repositorys.findbyidCourseGroups());
         return "table-group";
     }
 
