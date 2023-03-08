@@ -13,41 +13,9 @@
 </head>
 <body>
 <button><a href="/table/company">Company table</a></button>
-<button><a href="/courseForm">register Course</a></button>
-<h1>Groups</h1>
-<table border="2px">
-    <thead>
-    <th>Groups ID:</th>
-    <th>Groups:</th>
-    <th>dataStart:</th>
-    <th>dataFinish:</th>
-    <th>Company ID:</th>
-    <th>delete:</th>
-    <th>update:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${groups}" var="groups">
-        <tr>
-            <td>${groups.id}</td>
-            <td>${groups.groupName}</td>
-            <td>${groups.dataStart}</td>
-            <td>${groups.dataFinish}</td>
-            <td>${groups.company.id}</td>
-            <td>
-                <form action="/deleteGroup/${groups.id}" method="get">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
-            <td>
-                <form action="/updateGroup/${groups.id}" method="get">
-                    <button type="submit">update</button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<button><a href="/groupsForm">register Groups</a></button>
+<button><a href="/table/course">register Course</a></button>
+<button><a href="/table/group">register Group</a></button>
+
 <h1>Teacher</h1>
 <table border="2px">
     <thead>
