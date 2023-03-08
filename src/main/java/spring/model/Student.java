@@ -23,7 +23,7 @@ public class Student {
     private String email;
     @Column(name = "studentFormat")
     private Studentforms studentforms;
-    @ManyToOne(cascade = CascadeType.ALL,optional = false)
+    @ManyToOne
     @JoinColumn(name = "groups_id")
     private Groups group;
 

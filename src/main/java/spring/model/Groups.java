@@ -26,7 +26,7 @@ public class Groups {
     private Company company;
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<Student> students;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Course> courses;
 
     public Groups(String groupName, String dataStart, String dataFinish) {

@@ -141,7 +141,7 @@ public class Controler {
     public String deletebyidCompany(@PathVariable int id) {
         Company company = repositorys.findByIdCompany(id);
         repositorys.deleteCompany(company.getId());
-        return "redirect:/table/company";
+        return "redirect:/";
     }
 
     @GetMapping("/getCompany/by/{id}")
@@ -313,7 +313,7 @@ public class Controler {
     @GetMapping("deleteStudent/{id}")
     public String deleteByid(@PathVariable int id) {
         repositorys.deleteStudent(id);
-        return "redirect:/table/student";
+        return "redirect:/";
     }
 
     @GetMapping("deleteGroup/{id}")
@@ -325,12 +325,12 @@ public class Controler {
     @GetMapping("deleteCourse/{id}")
     public String deletebyIdCourse(@PathVariable int id) {
         repositorys.deleteCourse(id);
-        return "redirect:/table/course";
+        return "redirect:/";
     }
 
     @GetMapping("deleteTeacher/{id}")
     public String deletebyIDTeacher(@PathVariable int id) {
         repositorys.deleteTeacher(id);
-        return "redirect:/table/teacher";
+        return "redirect:/";
     }
 }

@@ -20,7 +20,7 @@ public class Teacher {
     private String last_name;
     @Column(name = "email")
     private String email;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "course_id")
     private Course course;
 

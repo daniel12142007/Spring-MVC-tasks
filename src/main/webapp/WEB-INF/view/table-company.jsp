@@ -28,7 +28,7 @@
             <td>${com.companyName}</td>
             <td>${com.locatedCountry}</td>
             <td>
-                <form action="/deleteCompany/${com.id}" method="get">
+                <form action="/deletebyCompany/${com.id}" method="get">
                     <button type="submit">delete</button>
                 </form>
             </td>
