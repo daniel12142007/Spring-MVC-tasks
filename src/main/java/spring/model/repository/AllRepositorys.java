@@ -155,19 +155,6 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     }
 
     @Override
-    public List findbyidGroupsCourses() {
-        Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select c from Groups g inner join Course c on g.id=c.id").getResultList();
-    }
-
-    @Override
-    public List findbyidCourseGroups() {
-        Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select c from Course g inner join Groups c on g.id=c.id").getResultList();
-    }
-
-
-    @Override
     public void saveGroup(Groups groups) {
         Session session = sessionFactory.getCurrentSession();
 //        session.beginTransaction();

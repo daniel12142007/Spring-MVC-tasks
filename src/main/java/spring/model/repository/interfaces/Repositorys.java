@@ -10,10 +10,6 @@ public interface Repositorys<Company, Course, Groups, Teacher, Student> {
 
     void saveCompany(Company ompany);
 
-    List findbyidGroupsCourses();
-
-    public List findbyidCourseGroups();
-
     void deleteCompany(int id);
 
     void updateCompany(int id, Company company);

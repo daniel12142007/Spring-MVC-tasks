@@ -47,8 +47,6 @@ public class Controler {
     @GetMapping("/table/group")
     public String tableGroup(Model model) {
         model.addAttribute("groups", repositorys.findAllGroup());
-        model.addAttribute("course_groups", repositorys.findbyidGroupsCourses());
-        model.addAttribute("groups_course", repositorys.findbyidCourseGroups());
         return "table-group";
     }
 
@@ -143,7 +141,7 @@ public class Controler {
     public String deletebyidCompany(@PathVariable int id) {
         Company company = repositorys.findByIdCompany(id);
         repositorys.deleteCompany(company.getId());
-        return "redirect:/";
+        return "redirect:/table/company";
     }
 
     @GetMapping("/getCompany/by/{id}")
@@ -315,45 +313,24 @@ public class Controler {
     @GetMapping("deleteStudent/{id}")
     public String deleteByid(@PathVariable int id) {
         repositorys.deleteStudent(id);
-        return "redirect:/";
+        return "redirect:/table/student";
     }
 
     @GetMapping("deleteGroup/{id}")
     public String deletebyIdGroup(@PathVariable int id) {
         repositorys.deleteGroup(id);
-        return "redirect:/";
+        return "redirect:/table/group";
     }
 
     @GetMapping("deleteCourse/{id}")
     public String deletebyIdCourse(@PathVariable int id) {
         repositorys.deleteCourse(id);
-        return "redirect:/";
+        return "redirect:/table/course";
     }
 
     @GetMapping("deleteTeacher/{id}")
     public String deletebyIDTeacher(@PathVariable int id) {
         repositorys.deleteTeacher(id);
-        return "redirect:/";
-    }
-
-    @GetMapping("deleteCompany/{id}")
-    public String deletebyIDCompany(@PathVariable int id) {
-        repositorys.deleteCompany(id);
-        return "redirect:/";
+        return "redirect:/table/teacher";
     }
 }
-// @GetMapping("/update/{id}")
-//    public String updatePersonForm(@PathVariable("id") int id, Model model) {
-//        Person person = personDao.findById(id);
-//        model.addAttribute("person", person);
-//        return "update-person-form";
-//    }
-//
-//    @PostMapping("/real/update/{id}")
-//    public String updatePerson(@RequestParam("name") String name,@RequestParam("age") int age,@PathVariable int id) {
-//        Person person = new Person();
-//        person.setName( name );
-//        person.setAge( age );
-//        personDao.updatePerson(id,person);
-//        return "redirect:/";
-//    }
