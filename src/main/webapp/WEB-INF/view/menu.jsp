@@ -12,11 +12,32 @@
     <title>Title</title>
 </head>
 <body>
-<button><a href="/table/company">Company table</a></button>
-<button><a href="/table/course">Course table</a></button>
-<button><a href="/table/group">Group table</a></button>
-<button><a href="/table/student">Student table</a></button>
-<button><a href="/table/teacher">Teacher table</a></button>
-
+<table border="2px">
+    <thead>
+    <tr>
+        <th>Company table</th>
+        <th>Course table</th>
+        <th>Group table</th>
+        <th>Student table</th>
+        <th>Teacher table</th>
+    </thead>
+    <tbody>
+    <td>
+        <button><a href="/table/company">Company table</a></button>
+    </td>
+    <td>
+        <button><a href="/table/course">Course table</a></button>
+    </td>
+    <td>
+        <button><a href="/table/group">Group table</a></button>
+    </td>
+    <td>
+        <button><a href="/table/student">Student table</a></button>
+    </td>
+    <td>
+        <button><a href="/table/teacher">Teacher table</a></button>
+    </td>
+    </tbody>
+</table>
 </body>
 </html>

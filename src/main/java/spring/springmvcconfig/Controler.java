@@ -10,6 +10,10 @@ import spring.model.*;
 import spring.model.enums.Studentforms;
 import spring.model.repository.interfaces.Repositorys;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 @Controller
 public class Controler {
     private final Repositorys<Company, Course, Groups, Teacher, Student> repositorys;
@@ -21,11 +25,11 @@ public class Controler {
     // menu
     @GetMapping("/")
     public String menu(Model model) {
-//        model.addAttribute("company", repositorys.findAllCompany());
-//        model.addAttribute("courses", repositorys.findAllCourse());
-//        model.addAttribute("groups", repositorys.findAllGroup());
-//        model.addAttribute("teachers", repositorys.findAllTeacher());
-//        model.addAttribute("student", repositorys.findAllStudent());
+        model.addAttribute("company", repositorys.findAllCompany());
+        model.addAttribute("courses", repositorys.findAllCourse());
+        model.addAttribute("groups", repositorys.findAllGroup());
+        model.addAttribute("teachers", repositorys.findAllTeacher());
+        model.addAttribute("student", repositorys.findAllStudent());
         return "menu";
     }
 
