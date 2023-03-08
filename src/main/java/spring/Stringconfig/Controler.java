@@ -1,4 +1,4 @@
-package spring.springmvcconfig;
+package spring.Stringconfig;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,6 @@ import spring.model.repository.interfaces.Repositorys;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 public class Controler {
@@ -48,8 +47,8 @@ public class Controler {
     @GetMapping("/table/group")
     public String tableGroup(Model model) {
         model.addAttribute("groups", repositorys.findAllGroup());
-        model.addAttribute("course_groups",repositorys.findbyidGroupsCourses());
-        model.addAttribute("groups_course",repositorys.findbyidCourseGroups());
+        model.addAttribute("course_groups", repositorys.findbyidGroupsCourses());
+        model.addAttribute("groups_course", repositorys.findbyidCourseGroups());
         return "table-group";
     }
 
@@ -112,22 +111,39 @@ public class Controler {
             @RequestParam("groupName") String groupName,
             @RequestParam("dataStart") String dataStart,
             @RequestParam("dataFinish") String dataFinish,
-            @RequestParam("id") int id
+            @RequestParam("id") int id,
+            @RequestParam("idCourse") int idCourse
     ) {
         Company company = repositorys.findByIdCompany(id);
+        Course course = repositorys.findByIdCourse(idCourse);
+        List<Course> courses = new ArrayList<>();
+        courses.add(course);
         Groups groups = new Groups();
         groups.setGroupName(groupName);
         groups.setDataStart(dataStart);
         groups.setDataFinish(dataFinish);
         groups.setCompany(company);
+        groups.setCourses(courses);
+        course.setCourses(courses);
         repositorys.saveGroup(groups);
         return "redirect:/";
+//        Course course = new Course("Java");
+//        Repositoryu repositoryu = new Repositoryu();
+//        repositoryu.saveCourse(course);
+//        List<Course> group1Courses = new ArrayList<>();
+//        group1Courses.add(course);
+//        Groups group = new Groups("Group 1");
+//        group.setCourses(group1Courses);
+//        course.setCourses(group1Courses);
+//        repositoryu.save(group);
+
     }
 
     // save forms groups
     @GetMapping("/groupsForm")
     public String saveFormGroups(Model model) {
         model.addAttribute("all", repositorys.findAllCompany());
+        model.addAttribute("course", repositorys.findbyidGroupsCourses());
         return "saveGroups";
     }
 

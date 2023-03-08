@@ -1,4 +1,4 @@
-package spring.url;
+package spring.exception;
 
 import spring.model.*;
 import spring.model.enums.Studentforms;

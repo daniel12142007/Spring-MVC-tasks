@@ -1,4 +1,4 @@
-package spring.url;
+package spring.exception;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

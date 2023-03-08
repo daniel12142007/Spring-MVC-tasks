@@ -1,4 +1,4 @@
-package spring.springmvcconfig;
+package spring.Stringconfig;
 
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
