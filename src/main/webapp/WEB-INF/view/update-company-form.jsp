@@ -14,8 +14,7 @@
 <form action="/updateCompanyPost/${company.id}" method="post">
     <label>companyName:</label><input value="${company.companyName}" type="text" name="companyName">
     <label>locatedCountry:</label><input value="${company.locatedCountry}" type="text" name="locatedCountry">
-    <input type="submit" value="update-person">
+    <input type="submit" value="update-company">
 </form>
-
 </body>
 </html>

@@ -1,6 +1,11 @@
 package spring.model.enums;
 
 public enum Studentforms {
-    OFFLINE,
-    ONLINE
+    OFFLINE("OFFLINE"),
+    ONLINE("ONLINE");
+    private String format;
+
+    Studentforms(String format) {
+        this.format = format;
+    }
 }

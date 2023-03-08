@@ -38,7 +38,8 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void deleteCompany(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Company where id=:companyId").setParameter("companyId", id).executeUpdate();
+        Company company = findByIdCompany(id);
+        session.delete(company);
     }
 
     @Override
@@ -78,7 +79,8 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void deleteCourse(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Course where id=:courseId").setParameter("courseId", id).executeUpdate();
+        Course course = findByIdCourse(id);
+        session.delete(course);
     }
 
     @Override
@@ -118,7 +120,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void deleteTeacher(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Teacher where id=:teacherId").setParameter("teacherId", id).executeUpdate();
+        session.createQuery("delete from Teacher where id=" + id).executeUpdate();
     }
 
     @Override
@@ -159,7 +161,8 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void deleteGroup(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Groups where id=:groupId").setParameter("groupId", id).executeUpdate();
+        Groups groups = findByidGroup(id);
+        session.delete(groups);
     }
 
     @Override
@@ -200,7 +203,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void deleteStudent(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Student where id=:studentId").setParameter("studentId", id).executeUpdate();
+        session.createQuery("delete from Student where id=" + id).executeUpdate();
     }
 
     @Override

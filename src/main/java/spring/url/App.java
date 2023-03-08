@@ -30,6 +30,7 @@ public class App {
         groups.add(group);
         course.setGroups(groups);
         company.setGroups(groups);
+
         repository1.save(company);
     }
 }

@@ -21,13 +21,12 @@ public class Groups {
     private String dataStart;
     @Column(name = "dataFinish")
     private String dataFinish;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<Student> students;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
+    @ManyToMany(mappedBy = "groups")
     private List<Course> courses;
 
     public Groups(String groupName, String dataStart, String dataFinish) {

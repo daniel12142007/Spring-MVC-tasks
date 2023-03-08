@@ -19,9 +19,9 @@ public class Company {
     private String companyName;
     @Column(name = "locatedCountry")
     private String locatedCountry;
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Course> courses;
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Groups> groups;
 
     public Company(String companyName, String locatedCountry) {

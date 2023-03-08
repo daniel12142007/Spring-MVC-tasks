@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     @Column(name = "first_name")
     private String first_name;
     @Column(name = "last_name")
@@ -23,7 +23,7 @@ public class Student {
     private String email;
     @Column(name = "studentFormat")
     private Studentforms studentforms;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,optional = false)
     @JoinColumn(name = "groups_id")
     private Groups group;
 

@@ -13,9 +13,10 @@
 </head>
 <body>
 <form action="/saveStudent" method="post">
-    <label>Teacher name</label><br><input type="text" name="first_name"><br>
-    <label>Teacher last_name</label><br><input type="text" name="last_name"><br>
+    <label>name</label><br><input type="text" name="first_name"><br>
+    <label>last_name</label><br><input type="text" name="last_name"><br>
     <label>email</label><br><input type="text" name="email"><br>
+    <label>format</label><br><input type="text" name="format"><br>
     <c:forEach items="${all}" var="group">
         <input type="radio" id="${group.id}" name="id" value="${group.id}">
         <label for="${group.id}">${group.groupName}</label><br>

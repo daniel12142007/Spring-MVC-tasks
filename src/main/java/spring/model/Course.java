@@ -19,13 +19,17 @@ public class Course {
     private String courName;
     @Column(name = "duration")
     private String duration;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     private Teacher teacher;
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "groups_id")
+    @JoinTable(
+            name = "courses_groups",
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = {@JoinColumn(name = "group_id")}
+    )
     private List<Groups> groups;
 
     public Course(String courName, String duration) {
