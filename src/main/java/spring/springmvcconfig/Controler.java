@@ -21,8 +21,8 @@ public class Controler {
     // menu
     @GetMapping("/")
     public String menu(Model model) {
-        model.addAttribute("company", repositorys.findAllCompany());
-        model.addAttribute("courses", repositorys.findAllCourse());
+//        model.addAttribute("company", repositorys.findAllCompany());
+//        model.addAttribute("courses", repositorys.findAllCourse());
         model.addAttribute("groups", repositorys.findAllGroup());
         model.addAttribute("teachers", repositorys.findAllTeacher());
         model.addAttribute("student", repositorys.findAllStudent());
@@ -34,6 +34,13 @@ public class Controler {
         model.addAttribute("company", repositorys.findAllCompany());
         return "table-company";
     }
+
+    @GetMapping("/table/course")
+    public String tableCourse(Model model) {
+        model.addAttribute("courses", repositorys.findAllCourse());
+        return "table-course";
+    }
+
 
     // save Company
     @PostMapping("/saveCompany")

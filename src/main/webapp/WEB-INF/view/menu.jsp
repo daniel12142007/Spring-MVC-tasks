@@ -12,37 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Course</h1>
-<table border="2px">
-    <thead>
-    <th>Courses ID:</th>
-    <th>Courses:</th>
-    <th>duration:</th>
-    <th>Company ID:</th>
-    <th>delete:</th>
-    <th>update:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${courses}" var="cour">
-        <tr>
-            <td>${cour.id}</td>
-            <td>${cour.courName}</td>
-            <td>${cour.duration}</td>
-            <td>${cour.company.id}</td>
-            <td>
-                <form action="/deleteCourse/${cour.id}" method="get">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
-            <td>
-                <form action="updateCourse/${cour.id}" method="get">
-                    <button type="submit">update</button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+<button><a href="/table/company">Company table</a></button>
 <button><a href="/courseForm">register Course</a></button>
 <h1>Groups</h1>
 <table border="2px">
