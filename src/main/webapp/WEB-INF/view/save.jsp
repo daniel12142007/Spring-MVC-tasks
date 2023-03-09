@@ -17,5 +17,17 @@
     <label>LocatedCountry</label><br><input type="text" name="locatedCountry"><br>
     <input type="submit" value="register company">
 </form>
+<style>
+    input {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+    input:hover {
+        background-color: #555555;
+        color: white;
+    }
+</style>
 </body>
 </html>
