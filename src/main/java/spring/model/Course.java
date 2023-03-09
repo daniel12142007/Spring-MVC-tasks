@@ -24,11 +24,6 @@ public class Course {
     private Company company;
     @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
     private Teacher teacher;
-    //    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "course_group",
-//            joinColumns = @JoinColumn(name = "course_id"),
-//            inverseJoinColumns = @JoinColumn(name = "group_id"))
-//    private List<Groups> groups;
     @ManyToMany(
             mappedBy = "courses",
             cascade = CascadeType.ALL)

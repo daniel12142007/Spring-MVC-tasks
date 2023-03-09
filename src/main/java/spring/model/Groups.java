@@ -26,10 +26,7 @@ public class Groups {
     private Company company;
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<Student> students;
-    //    @ManyToMany(mappedBy = "groups", cascade = CascadeType.ALL)
-//    private List<Course> courses;
     @ManyToMany
-//            (cascade = CascadeType.ALL)
     @JoinTable(name = "course_group",
             joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
