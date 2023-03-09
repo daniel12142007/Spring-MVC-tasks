@@ -1,8 +1,6 @@
 package spring.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import spring.model.enums.Studentforms;
 
 import javax.persistence.*;
