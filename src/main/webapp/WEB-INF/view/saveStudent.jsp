@@ -23,5 +23,17 @@
     </c:forEach>
     <input type="submit" value="register student">
 </form>
+<style>
+    input {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+    input:hover {
+        background-color: #555555;
+        color: white;
+    }
+</style>
 </body>
 </html>
