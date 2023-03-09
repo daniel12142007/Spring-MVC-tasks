@@ -105,6 +105,9 @@
     h1{
         margin-left: 500px;
     }
+    table{
+        margin: 0 auto;
+    }
 </style>
 </body>
 </html>

@@ -86,18 +86,21 @@
         color: white;
     }
     button{
-        margin-left: 500px;
+        /*margin-left: 500px;*/
         margin: 4px auto;
         padding: 4px;
     }
     a{
-        margin-left: 500px;
+        /*margin-left: 500px;*/
         margin: 2rem auto;
         padding: 2rem;
 
     }
     h1{
         margin-left: 500px;
+    }
+    table{
+        margin: 0 auto;
     }
 </style>
 </body>

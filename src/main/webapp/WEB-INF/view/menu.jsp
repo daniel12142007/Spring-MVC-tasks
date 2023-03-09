@@ -78,6 +78,23 @@
         background-color: #555555;
         color: white;
     }
+    table{
+        margin: 0 auto;
+    }
+    button{
+        margin-left: 500px;
+        margin: 4px auto;
+        padding: 4px;
+    }
+    a{
+        margin-left: 500px;
+        margin: 2rem auto;
+        padding: 2rem;
+
+    }
+    h1{
+        margin-left: 500px;
+    }
 </style>
 </body>
 </html>
