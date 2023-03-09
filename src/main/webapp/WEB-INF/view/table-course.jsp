@@ -36,7 +36,7 @@
             </td>
             <td>
                 <form action="updateCourse/${cour.id}" method="get">
-                    <button type="submit">update</button>
+                    <button type="submit"><a href="/updateCourse/${cour.id}">update</a></button>
                 </form>
             </td>
         </tr>

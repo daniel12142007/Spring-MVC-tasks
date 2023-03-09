@@ -199,7 +199,7 @@ public class Controler {
     }
 
     @PostMapping("/updateCompanyPost/{id}")
-    public String updatePerson(
+    public String updateCompany(
             @RequestParam("companyName") String companyName,
             @RequestParam("locatedCountry") String locatedCountry,
             @PathVariable int id) {

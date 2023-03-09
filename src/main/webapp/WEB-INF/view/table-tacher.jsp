@@ -38,7 +38,11 @@
       </td>
       <td>
         <form action="/updateTeacher/${teacher.id}" method="get">
-          <button type="submit">update</button>
+          <button type="submit">
+            <a href="/updateTeacher/${teacher.id}}">
+            update
+            </a>
+          </button>
         </form>
       </td>
     </tr>
