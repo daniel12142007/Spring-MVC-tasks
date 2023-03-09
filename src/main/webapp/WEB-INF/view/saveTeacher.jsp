@@ -56,7 +56,6 @@
         color: white;
 
     }
-
 </style>
 </body>
 </html>
