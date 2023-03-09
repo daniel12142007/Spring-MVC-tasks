@@ -35,7 +35,6 @@ public class Company {
                "id=" + id +
                ", companyName='" + companyName + '\'' +
                ", locatedCountry='" + locatedCountry + '\'' +
-//               ", courses=" + courses +
                '}';
     }
 }
