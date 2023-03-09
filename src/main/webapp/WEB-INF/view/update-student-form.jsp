@@ -12,11 +12,48 @@
 </head>
 <body>
 <form action="/updateStudentPost/${student.id}" method="post">
-    <label>first_name:</label><input value="${student.first_name}" type="text" name="first_name">
-    <label>last_name:</label><input value="${student.last_name}" type="text" name="last_name">
-    <label>email:</label><input value="${student.email}" type="text" name="email">
-    <label>studentforms:</label><input value="${student.studentforms}" name="studentforms">
+    <label>first_name:</label><br><input value="${student.first_name}" type="text" name="first_name"><br>
+    <label>last_name:</label><br><input value="${student.last_name}" type="text" name="last_name"><br>
+    <label>email:</label><br><input value="${student.email}" type="text" name="email"><br>
+    <label>studentforms:</label><input value="${student.studentforms}" name="studentforms"><br>
     <input type="submit" value="update-student">
 </form>
+<style>
+    form {
+        width: 70%;
+        max-width: 30rem;
+        margin: 2rem auto;
+        padding: 2rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form label {
+        font-weight: bold;
+        flex: 1;
+        color: rgb(0, 0, 0);
+        margin-bottom: 0.5rem;
+        margin-top: 10px;
+    }
+
+    form input {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+        flex: 3;
+        font-weight: bold;
+        font: inherit;
+        padding: 0.35rem 0.35rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+
+    }
+</style>
 </body>
 </html>

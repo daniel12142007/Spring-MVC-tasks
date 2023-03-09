@@ -12,8 +12,8 @@
 </head>
 <body>
 <form action="/updateCoursePost/${course.id}" method="post">
-    <label>courName:</label><input value="${course.courName}" type="text" name="courName">
-    <label>duration:</label><input value="${course.duration}" type="text" name="duration">
+    <label>courName:</label><br><input value="${course.courName}" type="text" name="courName"><br>
+    <label>duration:</label><br><input value="${course.duration}" type="text" name="duration"><br>
     <input type="submit" value="update-course">
 </form>
 </body>
