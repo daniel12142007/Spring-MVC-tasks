@@ -43,5 +43,45 @@
 </table>
 <button><a href="/companyForm">register Company</a></button>
 <button><a href="/">back</a></button>
+<style>
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    button {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+    a {
+        color: black;
+    }
+
+    a:hover {
+        background-color: #555555;
+        color: white;
+    }
+
+    button:hover {
+        background-color: #555555;
+        color: white;
+    }
+</style>
 </body>
 </html>
