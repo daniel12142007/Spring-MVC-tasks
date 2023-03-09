@@ -126,7 +126,7 @@ public class Controler {
         group.setCompany(company);
         group.setCourses(courses);
         groups.add(group);
-        course.setGroups(groups);
+//        course.setGroups(groups);
         repositorys.saveGroup(group);
         return "redirect:/table/group";
 
