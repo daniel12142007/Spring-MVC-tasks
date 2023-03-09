@@ -21,5 +21,6 @@
     </c:forEach>
     <input type="submit" value="register course">
 </form>
+
 </body>
 </html>
