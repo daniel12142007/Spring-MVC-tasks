@@ -235,7 +235,7 @@ public class Controler {
     public String updateGroupForm(@PathVariable("id") int id, Model model) {
         Groups group = repositorys.findByidGroup(id);
         model.addAttribute("groups", group);
-        return "update-group-form";
+        return "update-groups-form";
     }
 
     @PostMapping("/updaterGroupPost/{id}")
@@ -261,11 +261,11 @@ public class Controler {
     }
 
     @PostMapping("/updaterTeacherPost/{id}")
-    public String updateTeacher(
+    private String updateTeacher(
             @RequestParam("first_name") String first_name,
             @RequestParam("last_name") String last_name,
             @RequestParam("email") String email,
-            @PathVariable int id) {
+            @PathVariable("id") int id) {
         Teacher teacher = new Teacher();
         teacher.setFirst_name(first_name);
         teacher.setLast_name(last_name);
