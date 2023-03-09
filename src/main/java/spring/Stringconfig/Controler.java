@@ -20,10 +20,8 @@ public class Controler {
     public Controler(Repositorys<Company, Course, Groups, Teacher, Student> repositorys) {
         this.repositorys = repositorys;
     }
-
-    // menu
     @GetMapping("/")
-    public String menu(Model model) {
+    public String menu() {
         return "menu";
     }
 
@@ -39,11 +37,6 @@ public class Controler {
         return "table-course";
     }
 
-//    @GetMapping("/table/group")
-//    public String tableGroup(Model model) {
-//        model.addAttribute("groups", repositorys.findAllGroup());
-//        return "table-group";
-//    }
 
     @GetMapping("/table/group")
     public String tableGroup(Model model) {
@@ -63,8 +56,6 @@ public class Controler {
         model.addAttribute("teachers", repositorys.findAllTeacher());
         return "table-tacher";
     }
-
-    // save Company
     @PostMapping("/saveCompany")
     private String saveCompany(
             @RequestParam("companyName") String companyName,
@@ -77,13 +68,13 @@ public class Controler {
         return "redirect:/table/company";
     }
 
-    //save forms company
+
     @GetMapping("/companyForm")
     public String saveFormCompany() {
         return "save";
     }
 
-    //save Course
+
     @PostMapping("/saveCourse")
     private String saveCourse(
             @RequestParam("courName") String courName,
@@ -98,14 +89,13 @@ public class Controler {
         return "redirect:/table/course";
     }
 
-    // save forms course
     @GetMapping("/courseForm")
     public String saveFormCourse(Model model) {
         model.addAttribute("all", repositorys.findAllCompany());
         return "saveCourse";
     }
 
-    //save groups
+
     @PostMapping("/saveGroups")
     private String saveGroups(
             @RequestParam("groupName") String groupName,
@@ -126,13 +116,12 @@ public class Controler {
         group.setCompany(company);
         group.setCourses(courses);
         groups.add(group);
-//        course.setGroups(groups);
         repositorys.saveGroup(group);
         return "redirect:/table/group";
 
     }
 
-    // save forms groups
+
     @GetMapping("/groupsForm")
     public String saveFormGroups(Model model) {
         model.addAttribute("all", repositorys.findAllCompany());
@@ -154,7 +143,6 @@ public class Controler {
         return "findCompany";
     }
 
-    //save groups
     @PostMapping("/saveTeacher")
     private String saveTeacher(
             @RequestParam("first_name") String first_name,
@@ -172,7 +160,6 @@ public class Controler {
         return "redirect:/table/teacher";
     }
 
-    // save forms groups
     @GetMapping("/teacherForm")
     public String saveFormTeacher(Model model) {
         model.addAttribute("all", repositorys.findAllCourse());
@@ -198,7 +185,6 @@ public class Controler {
         return "redirect:/table/student";
     }
 
-    // save forms groups
     @GetMapping("/studentForm")
     public String saveFormStudent(Model model) {
         model.addAttribute("all", repositorys.findAllGroup());
