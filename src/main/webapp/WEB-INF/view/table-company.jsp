@@ -51,69 +51,61 @@
         <div>
         </div>
         <style>
-            .bg {
-                background-image: url("https://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            .bg-image {
+                background-image: url("https://wallpapers-fenix.eu/full/180331/101017562.jpg");
                 width: 100%;
                 background-size: cover;
                 background-repeat: no-repeat;
                 height: 700px;
             }
 
-            td, th {
-                border: 1px solid #ddd;
-                padding: 8px;
-                font-family: Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
+            table {
+                width: 70%;
+                max-width: 30rem;
+                margin: 0 auto;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+                border-radius: 3px;
+
             }
 
-
-            th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-                background-color: #04AA6D;
-                color: white;
-            }
-
-            button {
+            .button {
                 padding: 20px;
                 margin: 10px;
                 background: none;
             }
 
-            a {
+            .a {
                 color: white;
                 text-decoration: none;
             }
 
-            a:hover {
+            .a:hover {
                 color: red;
             }
 
-            table {
-                margin: 0 auto;
+            button {
+                background: none;
             }
 
-            button {
-                margin-left: 500px;
-                margin: 4px auto;
-                padding: 4px;
+            th {
+                color: white;
+            }
+
+            td {
+                color: white;
             }
 
             a {
-                margin-left: 500px;
-                margin: 2rem auto;
-                padding: 2rem;
-
+                color: white;
             }
 
-            * {
-                padding: 0;
-                margin: 0;
-            }
-
-            h1 {
-                margin-left: 500px;
+            button {
+                color: white;
             }
         </style>
 </body>

@@ -11,18 +11,20 @@
 <head>
     <title>Title</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
-        .bg-image{
+
+        .bg-image {
             background-image: url("https://wallpapers-fenix.eu/full/180331/101017562.jpg");
             width: 100%;
             background-size: cover;
             background-repeat: no-repeat;
             height: 700px;
         }
-        table{
+
+        table {
             width: 70%;
             max-width: 30rem;
             margin: 0 auto;
@@ -30,30 +32,41 @@
             border-radius: 3px;
 
         }
-           .button{
-               padding:  20px;
-               margin: 10px;
-               background: none;
-           }
-           .a{
-               color: white;
-               text-decoration: none;
-           }
-           .a:hover{
-               color: red;
-           }
-           button{
-               background: none;
-           }th{
+
+        .button {
+            padding: 20px;
+            margin: 10px;
+            background: none;
+        }
+
+        .a {
             color: white;
-                       }
-            td{
-                color: white;
-            }a{
-            color: white;}
-             button{
-                 color: white;
-             }
+            text-decoration: none;
+        }
+
+        .a:hover {
+            color: red;
+        }
+
+        button {
+            background: none;
+        }
+
+        th {
+            color: white;
+        }
+
+        td {
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+
+        button {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +103,7 @@
         </tbody>
     </table>
     <div style="display: flex; justify-content: center">
-        <button class="button" ><a class="a" href="/courseForm">register Course</a></button>
+        <button class="button"><a class="a" href="/courseForm">register Course</a></button>
         <button class="button"><a class="a" href="/">back</a></button>
     </div>
 </div>
