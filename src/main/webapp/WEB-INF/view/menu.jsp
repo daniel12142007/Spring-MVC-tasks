@@ -72,10 +72,12 @@
     a:hover {
         background-color: #555555;
         color: white;
+        animaton: all 3s;
     }
 
     button:hover {
         background-color: #555555;
+        animaton: all 3s;
         color: white;
     }
     table{

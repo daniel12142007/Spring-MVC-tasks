@@ -12,24 +12,36 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/saveCourse" method="post">
-    <label>Course name</label><br><input type="text" name="courName"><br>
-    <label>Duration</label><br><input type="text" name="duration"><br>
-    <c:forEach items="${all}" var="company">
-        <input type="radio" id="${company.id}" name="id" value="${company.id}">
-        <label for="${company.id}">${company.companyName}</label><br>
-    </c:forEach>
-    <input type="submit" value="register course">
-</form>
+<div class="bg">
+    <form action="/saveCourse" method="post">
+        <label>Course name</label><br><input type="text" name="courName"><br>
+        <label>Duration</label><br><input type="text" name="duration"><br>
+        <c:forEach items="${all}" var="company">
+            <input type="radio" id="${company.id}" name="id" value="${company.id}">
+            <label for="${company.id}">${company.companyName}</label><br>
+        </c:forEach>
+        <input type="submit" value="register course">
+    </form>
+</div>
+
 <style>
+    body{
+        margin: 0;
+    }
+    .bg{
+        background-image: url("https://i.pinimg.com/originals/d8/e5/4a/d8e54ab355257c4351f9f72baa521bf1.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 700px;
+    }
     form{
         width: 70%;
         max-width: 30rem;
-        margin: 2rem auto;
-        padding: 2rem;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         border-radius: 3px;
         display: flex;
+        margin: 0 auto;
         flex-direction: column;
     }
     form label {
@@ -38,6 +50,7 @@
         color: rgb(0,0,0);
         margin-bottom: 0.5rem;
         margin-top: 10px;
+        color: white;
     }
     form input{
         box-shadow: 4px 4px 10px rgba(0,0,0, 0.06);
