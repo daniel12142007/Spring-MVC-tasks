@@ -12,34 +12,44 @@
     <title>Title</title>
 </head>
 <body>
-<table border="2px">
-    <thead>
-    <tr>
-        <th>Company table</th>
-        <th>Course table</th>
-        <th>Group table</th>
-        <th>Student table</th>
-        <th>Teacher table</th>
-    </thead>
-    <tbody>
-    <td>
-        <button><a href="/table/company">Company table</a></button>
-    </td>
-    <td>
-        <button><a href="/table/course">Course table</a></button>
-    </td>
-    <td>
-        <button><a href="/table/group">Group table</a></button>
-    </td>
-    <td>
-        <button><a href="/table/student">Student table</a></button>
-    </td>
-    <td>
-        <button><a href="/table/teacher">Teacher table</a></button>
-    </td>
-    </tbody>
-</table>
+<div class="bg">
+    <table border="2px">
+        <thead>
+        <tr>
+            <th>Company table</th>
+            <th>Course table</th>
+            <th>Group table</th>
+            <th>Student table</th>
+            <th>Teacher table</th>
+        </thead>
+        <tbody>
+        <td>
+            <button><a href="/table/company">Company table</a></button>
+        </td>
+        <td>
+            <button><a href="/table/course">Course table</a></button>
+        </td>
+        <td>
+            <button><a href="/table/group">Group table</a></button>
+        </td>
+        <td>
+            <button><a href="/table/student">Student table</a></button>
+        </td>
+        <td>
+            <button><a href="/table/teacher">Teacher table</a></button>
+        </td>
+        </tbody>
+    </table>
+</div>
 <style>
+    .bg {
+        background-image: url("https://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 700px;
+    }
+
     td, th {
         border: 1px solid #ddd;
         padding: 8px;
@@ -47,9 +57,6 @@
         border-collapse: collapse;
     }
 
-    tr:hover {
-        background-color: #ddd;
-    }
 
     th {
         padding-top: 12px;
@@ -60,41 +67,37 @@
     }
 
     button {
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
+        padding: 20px;
+        margin: 10px;
+        background: none;
     }
 
     a {
-        color: black;
+        color: white;
+        text-decoration: none;
     }
 
     a:hover {
-        background-color: #555555;
-        color: white;
-        animaton: all 3s;
+        color: red;
     }
-
-    button:hover {
-        background-color: #555555;
-        animaton: all 3s;
-        color: white;
-    }
-    table{
+    table {
         margin: 0 auto;
     }
-    button{
+
+    button {
         margin-left: 500px;
         margin: 4px auto;
         padding: 4px;
     }
-    a{
+
+    a {
         margin-left: 500px;
         margin: 2rem auto;
         padding: 2rem;
 
     }
-    h1{
+
+    h1 {
         margin-left: 500px;
     }
 </style>

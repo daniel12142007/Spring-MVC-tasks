@@ -12,44 +12,51 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Teacher</h1>
-<table border="2px">
-    <thead>
-    <th>Teachers ID:</th>
-    <th>Teachers:</th>
-    <th>last_name:</th>
-    <th>email:</th>
-    <th>Course ID:</th>
-    <th>delete:</th>
-    <th>update:</th>
-    </thead>
-    <tbody>
-    <c:forEach items="${teachers}" var="teacher">
-        <tr>
-            <td>${teacher.id}</td>
-            <td>${teacher.first_name}</td>
-            <td>${teacher.last_name}</td>
-            <td>${teacher.email}</td>
-            <td>${teacher.course.id}</td>
-            <td>
-                <form action="/deleteTeacher/${teacher.id}" method="get">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
-            <td>
-                <form action="/updateTeacher/${teacher.id}" method="get">
-                    <button type="submit">
-                        <a href="/updateTeacher/${teacher.id}}">
-                            update
-                        </a>
-                    </button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<button><a href="/teacherForm">register Teacher</a></button>
-<button><a href="/">back</a></button>
+<div class="bg-image">
+    <h1>Teacher</h1>
+    <table border="2px">
+        <thead>
+        <th>Teachers ID:</th>
+        <th>Teachers:</th>
+        <th>last_name:</th>
+        <th>email:</th>
+        <th>Course ID:</th>
+        <th>delete:</th>
+        <th>update:</th>
+        </thead>
+        <tbody>
+        <c:forEach items="${teachers}" var="teacher">
+            <tr>
+                <td>${teacher.id}</td>
+                <td>${teacher.first_name}</td>
+                <td>${teacher.last_name}</td>
+                <td>${teacher.email}</td>
+                <td>${teacher.course.id}</td>
+                <td>
+                    <form action="/deleteTeacher/${teacher.id}" method="get">
+                        <button type="submit">delete</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/updateTeacher/${teacher.id}" method="get">
+                        <button type="submit">
+                            <a href="/updateTeacher/${teacher.id}}">
+                                update
+                            </a>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    <div style="display: flex; justify-content: center">
+        <button class="button"><a class="a" href="/teacherForm">register Teacher</a></button>
+        <button class="button"><a class="a" href="/">back</a></button>
+    </div>
+</div>
+<style>
+
+</style>
 </body>
 </html>
