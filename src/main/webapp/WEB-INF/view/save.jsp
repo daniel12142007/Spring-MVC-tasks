@@ -25,7 +25,7 @@
     }
 
     .bg {
-        background-image: url("https://i.pinimg.com/originals/d8/e5/4a/d8e54ab355257c4351f9f72baa521bf1.jpg");
+        background: chartreuse;
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
