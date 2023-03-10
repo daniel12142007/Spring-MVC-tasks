@@ -12,45 +12,62 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/saveStudent" method="post">
-    <label>name</label><br><input type="text" name="first_name"><br>
-    <label>last_name</label><br><input type="text" name="last_name"><br>
-    <label>email</label><br><input type="text" name="email"><br>
-    <label>format</label><br><input type="text" name="format"><br>
-    <c:forEach items="${all}" var="group">
-        <input type="radio" id="${group.id}" name="id" value="${group.id}">
-        <label for="${group.id}">${group.groupName}</label><br>
-    </c:forEach>
-    <input type="submit" value="register student">
-</form>
+<div class="bg">
+    <form action="/saveStudent" method="post">
+        <label>name</label><br><input type="text" name="first_name"><br>
+        <label>last_name</label><br><input type="text" name="last_name"><br>
+        <label>email</label><br><input type="text" name="email"><br>
+        <label>format</label><br><input type="text" name="format"><br>
+        <c:forEach items="${all}" var="group">
+            <input type="radio" id="${group.id}" name="id" value="${group.id}">
+            <label for="${group.id}">${group.groupName}</label><br>
+        </c:forEach>
+        <input type="submit" value="register student">
+    </form>
+</div>
 <style>
-    form{
+    body {
+        margin: 0;
+    }
+
+    .bg {
+        background-image: url("https://i.pinimg.com/originals/d8/e5/4a/d8e54ab355257c4351f9f72baa521bf1.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 700px;
+    }
+
+    form {
         width: 70%;
         max-width: 30rem;
-        margin: 2rem auto;
-        padding: 2rem;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         border-radius: 3px;
         display: flex;
+        margin: 0 auto;
         flex-direction: column;
     }
+
     form label {
         font-weight: bold;
-        flex:1;
-        color: rgb(0,0,0);
+        flex: 1;
+        color: rgb(0, 0, 0);
         margin-bottom: 0.5rem;
         margin-top: 10px;
+        color: white;
     }
-    form input{
-        box-shadow: 4px 4px 10px rgba(0,0,0, 0.06);
-        flex:3;
+
+    form input {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+        flex: 3;
         font-weight: bold;
         font: inherit;
         padding: 0.35rem 0.35rem;
         border-radius: 6px;
         border: 1px solid #ccc;
     }
-    button{
+
+    button {
         margin-top: 20px;
         background-color: black;
         color: white;

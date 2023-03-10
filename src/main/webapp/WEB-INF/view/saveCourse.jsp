@@ -25,17 +25,19 @@
 </div>
 
 <style>
-    body{
+    body {
         margin: 0;
     }
-    .bg{
+
+    .bg {
         background-image: url("https://i.pinimg.com/originals/d8/e5/4a/d8e54ab355257c4351f9f72baa521bf1.jpg");
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
         height: 700px;
     }
-    form{
+
+    form {
         width: 70%;
         max-width: 30rem;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -44,24 +46,27 @@
         margin: 0 auto;
         flex-direction: column;
     }
+
     form label {
         font-weight: bold;
-        flex:1;
-        color: rgb(0,0,0);
+        flex: 1;
+        color: rgb(0, 0, 0);
         margin-bottom: 0.5rem;
         margin-top: 10px;
         color: white;
     }
-    form input{
-        box-shadow: 4px 4px 10px rgba(0,0,0, 0.06);
-        flex:3;
+
+    form input {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+        flex: 3;
         font-weight: bold;
         font: inherit;
         padding: 0.35rem 0.35rem;
         border-radius: 6px;
         border: 1px solid #ccc;
     }
-    button{
+
+    button {
         margin-top: 20px;
         background-color: black;
         color: white;
