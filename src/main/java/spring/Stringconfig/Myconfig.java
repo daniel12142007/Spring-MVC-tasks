@@ -1,5 +1,6 @@
 package spring.Stringconfig;
 
+import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @ComponentScan("spring")
@@ -34,9 +36,17 @@ public class Myconfig implements WebMvcConfigurer {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
         sessionFactoryBean.setPackagesToScan(new String[]{"spring.model"});
+        sessionFactoryBean.setHibernateProperties(hibernateProperties());
         return sessionFactoryBean;
     }
 
+    private Properties hibernateProperties() {
+        Properties properties = new Properties();
+        properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+        properties.setProperty(Environment.SHOW_SQL, "true");
+        properties.setProperty(Environment.HBM2DDL_AUTO, "update");
+        return properties;
+    }
 
     @Bean
     public HibernateTransactionManager transactionManager() {
