@@ -38,7 +38,6 @@ public class Course {
                "id=" + id +
                ", courName='" + courName + '\'' +
                ", duration=" + duration +
-//               ", company=" + company +
                '}';
     }
 }
