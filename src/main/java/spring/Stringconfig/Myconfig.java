@@ -39,13 +39,6 @@ public class Myconfig implements WebMvcConfigurer {
         return sessionFactoryBean;
     }
 
-    private Properties hibernateProperties() {
-        Properties properties = new Properties();
-        properties.setProperty(Environment.DIALECT, "orh.hibernate.dialect.PostgreSQLDialect");
-        properties.setProperty(Environment.SHOW_SQL, "true");
-        properties.setProperty(Environment.HBM2DDL_AUTO, "create");
-        return properties;
-    }
 
     @Bean
     public HibernateTransactionManager transactionManager() {
