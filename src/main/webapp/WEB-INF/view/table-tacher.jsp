@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="bg-image">
+    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <h1>Teacher</h1>
     <table border="2px">
         <thead>

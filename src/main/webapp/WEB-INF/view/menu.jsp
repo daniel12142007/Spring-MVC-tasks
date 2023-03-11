@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="bg">
+    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <table border="2px">
         <thead>
         <tr>
@@ -80,6 +81,7 @@
     a:hover {
         color: red;
     }
+
     table {
         margin: 0 auto;
     }

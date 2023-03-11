@@ -71,6 +71,7 @@
 </head>
 <body>
 <div class="bg-image">
+    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <h1 style="text-align: center; color: white">Course</h1>
     <table border="2px">
         <thead>

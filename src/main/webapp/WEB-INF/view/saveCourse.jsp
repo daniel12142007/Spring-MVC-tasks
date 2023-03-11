@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="bg">
+    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <form action="/saveCourse" method="post">
         <label>Course name</label><br><input type="text" name="courName"><br>
         <label>Duration</label><br><input type="text" name="duration"><br>

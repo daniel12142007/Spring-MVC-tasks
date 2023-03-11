@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
+<h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
 <form action="/updateCoursePost/${course.id}" method="post">
     <label>courName:</label><br><input value="${course.courName}" type="text" name="courName"><br>
     <label>duration:</label><br><input value="${course.duration}" type="text" name="duration"><br>

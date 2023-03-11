@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
+<h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
 <form action="/updaterTeacherPost/${teacher.id}" method="post">
     <label>first_name:</label><br><input value="${teacher.first_name}" type="text" name="first_name"><br>
     <label>last_name:</label><br><input value="${teacher.last_name}" type="text" name="last_name"><br>

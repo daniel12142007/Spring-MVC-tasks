@@ -13,6 +13,7 @@
 <body>
 <%--@RequestParam("companyName") String companyName, @RequestParam("locatedCountry") String locatedCountry--%>
 <div class="bg">
+    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <form action="/saveCompany" method="post">
         <label>Company Name</label><br>
         <input type="text" name="companyName"><br>
