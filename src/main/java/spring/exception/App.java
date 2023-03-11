@@ -32,7 +32,6 @@ public class App {
         company.setCourses(courses);
         group.setCourses(courses);
         course.setGroups(group1Courses);
-//        group.setGroupName(courses);
         repository1.save(company);
     }
 }
