@@ -108,7 +108,6 @@ public class Controler {
     ) {
         Company company = repositorys.findByIdCompany(id);
         List<Course> courses = new ArrayList<>();
-        List<Groups> groups = new ArrayList<>();
         Course course = repositorys.findByIdCourse(idCourse);
         Groups group = new Groups();
         courses.add(course);
@@ -117,7 +116,6 @@ public class Controler {
         group.setDataFinish(dataFinish);
         group.setCompany(company);
         group.setCourses(courses);
-        groups.add(group);
         repositorys.saveGroup(group);
         return "redirect:/table/group";
 
