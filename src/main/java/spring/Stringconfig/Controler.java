@@ -20,6 +20,7 @@ public class Controler {
     public Controler(Repositorys<Company, Course, Groups, Teacher, Student> repositorys) {
         this.repositorys = repositorys;
     }
+
     @GetMapping("/")
     public String menu() {
         return "menu";
@@ -56,6 +57,7 @@ public class Controler {
         model.addAttribute("teachers", repositorys.findAllTeacher());
         return "table-tacher";
     }
+
     @PostMapping("/saveCompany")
     private String saveCompany(
             @RequestParam("companyName") String companyName,
@@ -229,7 +231,6 @@ public class Controler {
         repositorys.updateCourse(id, course);
         return "redirect:/";
     }
-
 
     @GetMapping("/updateGroup/{id}")
     public String updateGroupForm(@PathVariable("id") int id, Model model) {
