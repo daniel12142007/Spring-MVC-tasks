@@ -21,6 +21,26 @@ public class Controler {
         this.repositorys = repositorys;
     }
 
+    @GetMapping("/find/{id}")
+    public String getAll(
+            @PathVariable int id,
+            Model model) {
+        model.addAttribute("co", repositorys.findByIdCompany(id));
+        model.addAttribute("com", repositorys.findAllCompanyrelationShip(id));
+        model.addAttribute("comi", repositorys.findAllCompanyrelationShipCourse(id));
+        List<List<Student>> lists = new ArrayList<>();
+        List<List<Teacher>> arrayList = new ArrayList<>();
+        for (Groups groups : repositorys.findAllCompanyrelationShip(id)) {
+            lists.add(repositorys.findAllCompanyrelationShipStudent(groups.getId()));
+        }
+        model.addAttribute("comin", lists);
+        for (Course course : repositorys.findAllCompanyrelationShipCourse(id)) {
+            arrayList.add(repositorys.findAllCompanyrelationShipTeacher(course.getId()));
+        }
+        model.addAttribute("comina", arrayList);
+        return "com";
+    }
+
     @GetMapping("/")
     public String menu() {
         return "menu";

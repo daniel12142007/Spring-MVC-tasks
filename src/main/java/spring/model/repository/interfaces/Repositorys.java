@@ -1,9 +1,21 @@
 package spring.model.repository.interfaces;
 
+import spring.model.Course;
+import spring.model.Groups;
+
 import java.util.List;
+import java.util.Objects;
 
 public interface Repositorys<Company, Course, Groups, Teacher, Student> {
     // TODO: Company
+    List<Groups> findAllCompanyrelationShip(int id);
+
+    List<Course> findAllCompanyrelationShipCourse(int id);
+
+    List<Student> findAllCompanyrelationShipStudent(int id);
+
+    List<Teacher> findAllCompanyrelationShipTeacher(int id);
+
     List<Company> findAllCompany();
 
     Company findByIdCompany(int id);

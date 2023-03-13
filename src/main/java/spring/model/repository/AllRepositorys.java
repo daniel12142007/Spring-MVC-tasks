@@ -8,6 +8,7 @@ import spring.model.*;
 import spring.model.repository.interfaces.Repositorys;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -16,7 +17,62 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Autowired
     private SessionFactory sessionFactory;
 
+
     // TODO: Company
+    @Override
+    public List<Groups> findAllCompanyrelationShip(int id) {
+//        Session session = sessionFactory.getCurrentSession();
+        List<Groups> groups1 = new ArrayList<>();
+        Company mainEntity = findByIdCompany(id);
+        for (Groups group : findAllGroup()) {
+            Groups groups = findByidGroup(group.getId());
+            if (groups.getCompany().getId() == mainEntity.getId()) {
+                groups1.add(groups);
+            }
+        }
+        return groups1;
+    }
+
+    @Override
+    public List<Course> findAllCompanyrelationShipCourse(int id) {
+//        Session session = sessionFactory.getCurrentSession();
+        List<Course> groups1 = new ArrayList<>();
+        Company mainEntity = findByIdCompany(id);
+        for (Course course : findAllCourse()) {
+            Course groups = findByIdCourse(course.getId());
+            if (groups.getCompany().getId() == mainEntity.getId()) {
+                groups1.add(groups);
+            }
+        }
+        return groups1;
+    }
+
+    @Override
+    public List<Student> findAllCompanyrelationShipStudent(int id) {
+        List<Student> groups1 = new ArrayList<>();
+        Groups mainEntity = findByidGroup(id);
+        for (Student group : findAllStudent()) {
+            Student groups = findByidStudent(group.getId());
+            if (groups.getGroup().getId() == mainEntity.getId()) {
+                groups1.add(groups);
+            }
+        }
+        return groups1;
+    }
+
+    @Override
+    public List<Teacher> findAllCompanyrelationShipTeacher(int id) {
+        List<Teacher> groups1 = new ArrayList<>();
+        Course mainEntity = findByIdCourse(id);
+        for (Teacher group : findAllTeacher()) {
+            Teacher groups = findByidTeacher(group.getId());
+            if (groups.getCourse().getId() == mainEntity.getId()) {
+                groups1.add(groups);
+            }
+        }
+        return groups1;
+    }
+
     @Override
     public List<Company> findAllCompany() {
         Session session = sessionFactory.getCurrentSession();

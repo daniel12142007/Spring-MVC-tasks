@@ -22,6 +22,7 @@
         <th>locatedCountry:</th>
         <th>delete:</th>
         <th>update:</th>
+        <th>get Companies relation ship</th>
         </thead>
         <tbody>
         <c:forEach items="${company}" var="com">
@@ -41,6 +42,9 @@
                     <form action="updateCompany/${com.id}" method="get">
                         <button type="submit"><a href="/updateCompany/${com.id}">update</a></button>
                     </form>
+                </td>
+                <td>
+                    <button><a href="/find/${com.id}">${com.companyName}</a></button>
                 </td>
             </tr>
         </c:forEach>
