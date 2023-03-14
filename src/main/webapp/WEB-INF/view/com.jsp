@@ -90,6 +90,7 @@
         font-family: Arial, sans-serif;
         font-size: 14px;
     }
+
     body {
         background-image: url("https://i.pinimg.com/originals/86/33/d6/8633d62b06962ff5b83fce01c15c6170.jpg");
         width: 100%;
@@ -121,7 +122,8 @@
         font-weight: bold;
         margin-bottom: 10px;
     }
-    h2{
+
+    h2 {
         color: white;
         font-size: 16px;
         font-weight: bold;

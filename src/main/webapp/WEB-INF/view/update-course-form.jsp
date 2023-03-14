@@ -51,8 +51,8 @@
         margin-top: 20px;
         background-color: black;
         color: white;
-
     }
+
     body {
         background-image: url("https://img2.akspic.ru/attachments/crops/9/6/1/8/88169/88169-nebo-anime-kraska-art-zhivopis-3840x2160.jpg");
         width: 100%;

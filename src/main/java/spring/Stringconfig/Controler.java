@@ -28,17 +28,13 @@ public class Controler {
         model.addAttribute("co", repositorys.findByIdCompany(id));
         model.addAttribute("com", repositorys.findAllCompanyrelationShip(id));
         model.addAttribute("comi", repositorys.findAllCompanyrelationShipCourse(id));
-//        List<List<Student>> lists = new ArrayList<>();
-//        List<List<Teacher>> arrayList = new ArrayList<>();
         for (Groups groups : repositorys.findAllCompanyrelationShip(id)) {
-//            repositorys.findAllCompanyrelationShipStudent(groups.getId());
             if (repositorys.findAllCompanyrelationShipStudent(groups.getId()).size() >= 1) {
                 repositorys.findAllCompanyrelationShipStudent(groups.getId());
                 model.addAttribute("comin", repositorys.findAllCompanyrelationShipStudent(groups.getId()));
             }
         }
         for (Course course : repositorys.findAllCompanyrelationShipCourse(id)) {
-//            arrayList.add(repositorys.findAllCompanyrelationShipTeacher(course.getId()));
             if (repositorys.findAllCompanyrelationShipTeacher(course.getId()).size() >= 1) {
                 model.addAttribute("comina", repositorys.findAllCompanyrelationShipTeacher(course.getId()));
             }

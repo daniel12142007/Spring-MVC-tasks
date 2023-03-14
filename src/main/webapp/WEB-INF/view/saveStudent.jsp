@@ -12,21 +12,21 @@
     <title>Title</title>
 </head>
 <body>
-    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
-    <form action="/saveStudent" method="post">
-        <label>name</label><br><input type="text" name="first_name"><br>
-        <label>last_name</label><br><input type="text" name="last_name"><br>
-        <label>email</label><br><input type="text" name="email"><br>
-        <label>format</label><br><input type="text" name="format"><br>
-        <h1 style="color: white">Select Group</h1>
-        <c:forEach items="${all}" var="group">
-            <div>
+<h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
+<form action="/saveStudent" method="post">
+    <label>name</label><br><input type="text" name="first_name"><br>
+    <label>last_name</label><br><input type="text" name="last_name"><br>
+    <label>email</label><br><input type="text" name="email"><br>
+    <label>format</label><br><input type="text" name="format"><br>
+    <h1 style="color: white">Select Group</h1>
+    <c:forEach items="${all}" var="group">
+        <div>
             <input type="radio" id="${group.id}" name="id" value="${group.id}">
             <label for="${group.id}">${group.groupName}</label><br>
-            </div>
-        </c:forEach>
-        <input type="submit" value="register student">
-    </form>
+        </div>
+    </c:forEach>
+    <input type="submit" value="register student">
+</form>
 <style>
     body {
         width: 100%;

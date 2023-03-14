@@ -21,7 +21,6 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     // TODO: Company
     @Override
     public List<Groups> findAllCompanyrelationShip(int id) {
-//        Session session = sessionFactory.getCurrentSession();
         List<Groups> groups1 = new ArrayList<>();
         Company mainEntity = findByIdCompany(id);
         for (Groups group : findAllGroup()) {
@@ -35,7 +34,6 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
 
     @Override
     public List<Course> findAllCompanyrelationShipCourse(int id) {
-//        Session session = sessionFactory.getCurrentSession();
         List<Course> groups1 = new ArrayList<>();
         Company mainEntity = findByIdCompany(id);
         for (Course course : findAllCourse()) {
@@ -217,9 +215,7 @@ public class AllRepositorys implements Repositorys<Company, Course, Groups, Teac
     @Override
     public void saveGroup(Groups group) {
         Session session = sessionFactory.getCurrentSession();
-//        session.beginTransaction();
         session.save(group);
-//        session.getTransaction().commit();
     }
 
     @Override

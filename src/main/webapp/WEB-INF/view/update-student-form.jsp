@@ -27,6 +27,7 @@
         background-repeat: no-repeat;
         height: 700px;
     }
+
     form {
         width: 70%;
         max-width: 30rem;
@@ -60,7 +61,6 @@
         margin-top: 20px;
         background-color: black;
         color: white;
-
     }
 </style>
 </body>

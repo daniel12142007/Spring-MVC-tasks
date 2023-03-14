@@ -12,20 +12,20 @@
     <title>Title</title>
 </head>
 <body>
-    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
-    <form action="/saveTeacher" method="post">
-        <label>Teacher name</label><br><input type="text" name="first_name"><br>
-        <label>Teacher last_name</label><br><input type="text" name="last_name"><br>
-        <label>email</label><br><input type="text" name="email"><br>
-        <h1 style="color: white">Select Course</h1>
-        <c:forEach items="${all}" var="courses">
-            <diva>
+<h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
+<form action="/saveTeacher" method="post">
+    <label>Teacher name</label><br><input type="text" name="first_name"><br>
+    <label>Teacher last_name</label><br><input type="text" name="last_name"><br>
+    <label>email</label><br><input type="text" name="email"><br>
+    <h1 style="color: white">Select Course</h1>
+    <c:forEach items="${all}" var="courses">
+        <diva>
             <input type="radio" id="${courses.id}" name="id" value="${courses.id}">
             <label for="${courses.id}">${courses.courName}</label><br>
-            </diva>
-        </c:forEach>
-        <input type="submit" value="register group">
-    </form>
+        </diva>
+    </c:forEach>
+    <input type="submit" value="register group">
+</form>
 <style>
     body {
         width: 100%;

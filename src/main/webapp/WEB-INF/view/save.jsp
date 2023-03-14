@@ -12,14 +12,14 @@
 </head>
 <body>
 <%--@RequestParam("companyName") String companyName, @RequestParam("locatedCountry") String locatedCountry--%>
-    <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
-    <form action="/saveCompany" method="post">
-        <label>Company Name</label><br>
-        <input type="text" name="companyName"><br>
-        <label>LocatedCountry</label><br>
-        <input type="text" name="locatedCountry"><br>
-        <input type="submit" value="register company">
-    </form>
+<h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
+<form action="/saveCompany" method="post">
+    <label>Company Name</label><br>
+    <input type="text" name="companyName"><br>
+    <label>LocatedCountry</label><br>
+    <input type="text" name="locatedCountry"><br>
+    <input type="submit" value="register company">
+</form>
 <style>
     body {
         width: 100%;

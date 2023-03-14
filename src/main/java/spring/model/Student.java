@@ -40,7 +40,6 @@ public class Student {
                ", last_name='" + last_name + '\'' +
                ", email='" + email + '\'' +
                ", studentforms=" + studentforms +
-//               ", group=" + group +
                '}';
     }
 }
