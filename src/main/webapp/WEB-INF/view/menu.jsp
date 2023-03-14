@@ -43,8 +43,8 @@
     </table>
 </div>
 <style>
-    .bg {
-        background-image: url("https://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    body {
+        background-image: url("https://klike.net/uploads/posts/2022-09/1663227698_g-1.jpg");
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -61,6 +61,7 @@
 
     th {
         padding-top: 12px;
+
         padding-bottom: 12px;
         text-align: left;
         background-color: #04AA6D;

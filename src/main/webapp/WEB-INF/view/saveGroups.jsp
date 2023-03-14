@@ -11,8 +11,7 @@
 <head>
     <title>Title</title>
 </head>
-<body>
-<div class="bg">
+<body>.
     <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <form action="/saveGroups" method="post">
         <label>Groups name</label><br>
@@ -21,31 +20,25 @@
         <input type="text" name="dataStart"><br>
         <label>dataFinish</label><br>
         <input type="text" name="dataFinish"><br>
-        <h1>Select Company</h1>
+        <h1 style="color: white">Select Company</h1>
         <c:forEach items="${all}" var="company">
             <input type="radio" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label><br>
         </c:forEach>
-        <h1>Select Course</h1>
+        <h1 style="color: white">Select Course</h1>
         <c:forEach items="${course}" var="idCourse">
             <input type="radio" id="${idCourse.id}" name="idCourse" value="${idCourse.id}">
             <label for="${idCourse.id}">${idCourse.courName}</label><br>
         </c:forEach>
         <input type="submit" value="register group">
     </form>
-</div>
 <style>
     body {
-        margin: 0;
-    }
-
-    .bg {
-        /*background-image: url("https://i.pinimg.com/originals/d8/e5/4a/d8e54ab355257c4351f9f72baa521bf1.jpg");*/
-        background: chartreuse;
         width: 100%;
         background-size: cover;
-        /*background-repeat: no-repeat;*/
-        height: 1000px;
+        background-repeat: no-repeat;
+        height: 700px;
+        background-image: url("https://i.pinimg.com/originals/8a/f0/0a/8af00a893dfed093bff38b945766282a.png");
     }
 
     form {
@@ -56,13 +49,12 @@
         display: flex;
         margin: 0 auto;
         flex-direction: column;
+        color: none;
     }
 
     form label {
         font-weight: bold;
         flex: 1;
-        color: rgb(0, 0, 0);
-        margin-bottom: 0.5rem;
         margin-top: 10px;
         color: white;
     }
@@ -70,8 +62,6 @@
     form input {
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
         flex: 3;
-        font-weight: bold;
-        font: inherit;
         padding: 0.35rem 0.35rem;
         border-radius: 6px;
         border: 1px solid #ccc;
@@ -80,7 +70,7 @@
     button {
         margin-top: 20px;
         background-color: black;
-        color: white;
+        color: none;
     }
 </style>
 </body>
