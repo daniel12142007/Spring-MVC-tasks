@@ -19,8 +19,10 @@
         <label>email</label><br><input type="text" name="email"><br>
         <h1 style="color: white">Select Course</h1>
         <c:forEach items="${all}" var="courses">
+            <diva>
             <input type="radio" id="${courses.id}" name="id" value="${courses.id}">
             <label for="${courses.id}">${courses.courName}</label><br>
+            </diva>
         </c:forEach>
         <input type="submit" value="register group">
     </form>

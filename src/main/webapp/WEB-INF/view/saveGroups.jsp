@@ -22,13 +22,17 @@
         <input type="text" name="dataFinish"><br>
         <h1 style="color: white">Select Company</h1>
         <c:forEach items="${all}" var="company">
+            <div>
             <input type="radio" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label><br>
+            </div>
         </c:forEach>
         <h1 style="color: white">Select Course</h1>
         <c:forEach items="${course}" var="idCourse">
+            <div>
             <input type="radio" id="${idCourse.id}" name="idCourse" value="${idCourse.id}">
             <label for="${idCourse.id}">${idCourse.courName}</label><br>
+            </div>
         </c:forEach>
         <input type="submit" value="register group">
     </form>

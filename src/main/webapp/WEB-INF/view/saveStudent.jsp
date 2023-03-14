@@ -20,8 +20,10 @@
         <label>format</label><br><input type="text" name="format"><br>
         <h1 style="color: white">Select Group</h1>
         <c:forEach items="${all}" var="group">
+            <div>
             <input type="radio" id="${group.id}" name="id" value="${group.id}">
             <label for="${group.id}">${group.groupName}</label><br>
+            </div>
         </c:forEach>
         <input type="submit" value="register student">
     </form>
