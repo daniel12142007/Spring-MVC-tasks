@@ -15,9 +15,12 @@
 <div class="bg">
     <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
     <form action="/saveGroups" method="post">
-        <label>Groups name</label><br><input type="text" name="groupName"><br>
-        <label>dataStart</label><br><input type="text" name="dataStart"><br>
-        <label>dataFinish</label><br><input type="text" name="dataFinish"><br>
+        <label>Groups name</label><br>
+        <input type="text" name="groupName"><br>
+        <label>dataStart</label><br>
+        <input type="text" name="dataStart"><br>
+        <label>dataFinish</label><br>
+        <input type="text" name="dataFinish"><br>
         <h1>Select Company</h1>
         <c:forEach items="${all}" var="company">
             <input type="radio" id="${company.id}" name="id" value="${company.id}">

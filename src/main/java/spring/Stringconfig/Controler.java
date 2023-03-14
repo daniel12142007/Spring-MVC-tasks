@@ -138,7 +138,6 @@ public class Controler {
         group.setCourses(courses);
         repositorys.saveGroup(group);
         return "redirect:/table/group";
-
     }
 
 
