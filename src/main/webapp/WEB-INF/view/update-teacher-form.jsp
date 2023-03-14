@@ -19,6 +19,13 @@
     <input type="submit" value="update-teacher">
 </form>
 <style>
+    body {
+        background-image: url("https://img2.akspic.ru/attachments/crops/9/6/1/8/88169/88169-nebo-anime-kraska-art-zhivopis-3840x2160.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 700px;
+    }
     form {
         width: 70%;
         max-width: 30rem;
