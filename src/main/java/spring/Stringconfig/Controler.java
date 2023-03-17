@@ -30,7 +30,6 @@ public class Controler {
         model.addAttribute("comi", repositorys.findAllCompanyrelationShipCourse(id));
         for (Groups groups : repositorys.findAllCompanyrelationShip(id)) {
             if (repositorys.findAllCompanyrelationShipStudent(groups.getId()).size() >= 1) {
-                repositorys.findAllCompanyrelationShipStudent(groups.getId());
                 model.addAttribute("comin", repositorys.findAllCompanyrelationShipStudent(groups.getId()));
             }
         }

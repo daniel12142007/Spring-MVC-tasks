@@ -13,7 +13,7 @@
 </head>
 <body>
 <div>
-<%--    <table>--%>
+    <table>
         <td>
             <caption>Company</caption>
             <table border="2px">
@@ -81,7 +81,7 @@
                 </c:forEach>
             </table>
         </td>
-<%--    </table>--%>
+    </table>
 </div>
 <style>
     table {
