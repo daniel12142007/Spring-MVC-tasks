@@ -32,9 +32,10 @@
                 <td>${com.locatedCountry}</td>
                 <td>
                     <form action="/deletebyCompany/${com.id}" method="get">
-                        <button type="submit"><a>
-                            delete
-                        </a>
+                        <button type="submit">
+                            <a>
+                                delete
+                            </a>
                         </button>
                     </form>
                 </td>

@@ -13,8 +13,10 @@
 <body>
 <h1><a href="https://github.com/daniel12142007">GitHub</a></h1>
 <form action="/updateCompanyPost/${company.id}" method="post">
-    <label>companyName:</label><br><input value="${company.companyName}" type="text" name="companyName"><br>
-    <label>locatedCountry:</label><br><input value="${company.locatedCountry}" type="text" name="locatedCountry"><br>
+    <label>companyName:</label><br>
+    <input value="${company.companyName}" type="text" name="companyName"><br>
+    <label>locatedCountry:</label><br>
+    <input value="${company.locatedCountry}" type="text" name="locatedCountry"><br>
     <input type="submit" value="update-company">
 </form>
 <style>
