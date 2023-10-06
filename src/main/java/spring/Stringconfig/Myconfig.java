@@ -31,6 +31,15 @@ public class Myconfig implements WebMvcConfigurer {
         return dataSource;
     }
 
+
+    private Properties hibernateProperties() {
+        Properties properties = new Properties();
+        properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+        properties.setProperty(Environment.SHOW_SQL, "true");
+        properties.setProperty(Environment.HBM2DDL_AUTO, "create");
+        return properties;
+    }
+
     @Bean
     public LocalSessionFactoryBean sessionFactoryBean() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
@@ -38,14 +47,6 @@ public class Myconfig implements WebMvcConfigurer {
         sessionFactoryBean.setPackagesToScan(new String[]{"spring.model"});
         sessionFactoryBean.setHibernateProperties(hibernateProperties());
         return sessionFactoryBean;
-    }
-
-    private Properties hibernateProperties() {
-        Properties properties = new Properties();
-        properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
-        properties.setProperty(Environment.SHOW_SQL, "true");
-        properties.setProperty(Environment.HBM2DDL_AUTO, "update");
-        return properties;
     }
 
     @Bean

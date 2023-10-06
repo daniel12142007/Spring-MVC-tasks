@@ -1,5 +1,6 @@
 package spring.Stringconfig;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +23,7 @@ public class Controler {
     }
 
     @GetMapping("/find/{id}")
-    public String getAll(
-            @PathVariable int id,
-            Model model) {
+    public String getAll(@PathVariable int id, Model model) {
         model.addAttribute("co", repositorys.findByIdCompany(id));
         model.addAttribute("com", repositorys.findAllCompanyrelationShip(id));
         model.addAttribute("comi", repositorys.findAllCompanyrelationShipCourse(id));

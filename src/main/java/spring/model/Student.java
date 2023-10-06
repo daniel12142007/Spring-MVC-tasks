@@ -20,6 +20,7 @@ public class Student {
     @Column(name = "email")
     private String email;
     @Column(name = "studentFormat")
+    @Enumerated(EnumType.STRING)
     private Studentforms studentforms;
     @ManyToOne
     @JoinColumn(name = "groups_id")
